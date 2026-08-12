@@ -82,6 +82,15 @@ export declare const Request: {
                 keyPosition?: number | undefined;
                 name?: string | undefined;
             } | undefined;
+            setLayerSensorBinding?: {
+                layerId?: number | undefined;
+                sensorPosition?: number | undefined;
+                binding?: {
+                    behaviorId?: number | undefined;
+                    param1?: number | undefined;
+                    param2?: number | undefined;
+                } | undefined;
+            } | undefined;
         } | undefined;
     } & {
         requestId?: number | undefined;
@@ -145,6 +154,15 @@ export declare const Request: {
                 layerId?: number | undefined;
                 keyPosition?: number | undefined;
                 name?: string | undefined;
+            } | undefined;
+            setLayerSensorBinding?: {
+                layerId?: number | undefined;
+                sensorPosition?: number | undefined;
+                binding?: {
+                    behaviorId?: number | undefined;
+                    param1?: number | undefined;
+                    param2?: number | undefined;
+                } | undefined;
             } | undefined;
         } & {
             getKeymap?: boolean | undefined;
@@ -210,8 +228,29 @@ export declare const Request: {
                 keyPosition?: number | undefined;
                 name?: string | undefined;
             } & { [K_10 in Exclude<keyof I["keymap"]["setLayerKeyName"], keyof import("./keymap").SetLayerKeyNameRequest>]: never; }) | undefined;
-        } & { [K_11 in Exclude<keyof I["keymap"], keyof Request3>]: never; }) | undefined;
-    } & { [K_12 in Exclude<keyof I, keyof Request>]: never; }>(base?: I | undefined): Request;
+            setLayerSensorBinding?: ({
+                layerId?: number | undefined;
+                sensorPosition?: number | undefined;
+                binding?: {
+                    behaviorId?: number | undefined;
+                    param1?: number | undefined;
+                    param2?: number | undefined;
+                } | undefined;
+            } & {
+                layerId?: number | undefined;
+                sensorPosition?: number | undefined;
+                binding?: ({
+                    behaviorId?: number | undefined;
+                    param1?: number | undefined;
+                    param2?: number | undefined;
+                } & {
+                    behaviorId?: number | undefined;
+                    param1?: number | undefined;
+                    param2?: number | undefined;
+                } & { [K_11 in Exclude<keyof I["keymap"]["setLayerSensorBinding"]["binding"], keyof import("./keymap").BehaviorBinding>]: never; }) | undefined;
+            } & { [K_12 in Exclude<keyof I["keymap"]["setLayerSensorBinding"], keyof import("./keymap").SetLayerSensorBindingRequest>]: never; }) | undefined;
+        } & { [K_13 in Exclude<keyof I["keymap"], keyof Request3>]: never; }) | undefined;
+    } & { [K_14 in Exclude<keyof I, keyof Request>]: never; }>(base?: I | undefined): Request;
     fromPartial<I_1 extends {
         requestId?: number | undefined;
         core?: {
@@ -263,6 +302,15 @@ export declare const Request: {
                 keyPosition?: number | undefined;
                 name?: string | undefined;
             } | undefined;
+            setLayerSensorBinding?: {
+                layerId?: number | undefined;
+                sensorPosition?: number | undefined;
+                binding?: {
+                    behaviorId?: number | undefined;
+                    param1?: number | undefined;
+                    param2?: number | undefined;
+                } | undefined;
+            } | undefined;
         } | undefined;
     } & {
         requestId?: number | undefined;
@@ -276,7 +324,7 @@ export declare const Request: {
             getLockState?: boolean | undefined;
             lock?: boolean | undefined;
             resetSettings?: boolean | undefined;
-        } & { [K_13 in Exclude<keyof I_1["core"], keyof Request1>]: never; }) | undefined;
+        } & { [K_15 in Exclude<keyof I_1["core"], keyof Request1>]: never; }) | undefined;
         behaviors?: ({
             listAllBehaviors?: boolean | undefined;
             getBehaviorDetails?: {
@@ -288,8 +336,8 @@ export declare const Request: {
                 behaviorId?: number | undefined;
             } & {
                 behaviorId?: number | undefined;
-            } & { [K_14 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"], "behaviorId">]: never; }) | undefined;
-        } & { [K_15 in Exclude<keyof I_1["behaviors"], keyof Request2>]: never; }) | undefined;
+            } & { [K_16 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"], "behaviorId">]: never; }) | undefined;
+        } & { [K_17 in Exclude<keyof I_1["behaviors"], keyof Request2>]: never; }) | undefined;
         keymap?: ({
             getKeymap?: boolean | undefined;
             setLayerBinding?: {
@@ -327,6 +375,15 @@ export declare const Request: {
                 keyPosition?: number | undefined;
                 name?: string | undefined;
             } | undefined;
+            setLayerSensorBinding?: {
+                layerId?: number | undefined;
+                sensorPosition?: number | undefined;
+                binding?: {
+                    behaviorId?: number | undefined;
+                    param1?: number | undefined;
+                    param2?: number | undefined;
+                } | undefined;
+            } | undefined;
         } & {
             getKeymap?: boolean | undefined;
             setLayerBinding?: ({
@@ -348,8 +405,8 @@ export declare const Request: {
                     behaviorId?: number | undefined;
                     param1?: number | undefined;
                     param2?: number | undefined;
-                } & { [K_16 in Exclude<keyof I_1["keymap"]["setLayerBinding"]["binding"], keyof import("./keymap").BehaviorBinding>]: never; }) | undefined;
-            } & { [K_17 in Exclude<keyof I_1["keymap"]["setLayerBinding"], keyof import("./keymap").SetLayerBindingRequest>]: never; }) | undefined;
+                } & { [K_18 in Exclude<keyof I_1["keymap"]["setLayerBinding"]["binding"], keyof import("./keymap").BehaviorBinding>]: never; }) | undefined;
+            } & { [K_19 in Exclude<keyof I_1["keymap"]["setLayerBinding"], keyof import("./keymap").SetLayerBindingRequest>]: never; }) | undefined;
             checkUnsavedChanges?: boolean | undefined;
             saveChanges?: boolean | undefined;
             discardChanges?: boolean | undefined;
@@ -361,27 +418,27 @@ export declare const Request: {
             } & {
                 startIndex?: number | undefined;
                 destIndex?: number | undefined;
-            } & { [K_18 in Exclude<keyof I_1["keymap"]["moveLayer"], keyof import("./keymap").MoveLayerRequest>]: never; }) | undefined;
-            addLayer?: ({} & {} & { [K_19 in Exclude<keyof I_1["keymap"]["addLayer"], never>]: never; }) | undefined;
+            } & { [K_20 in Exclude<keyof I_1["keymap"]["moveLayer"], keyof import("./keymap").MoveLayerRequest>]: never; }) | undefined;
+            addLayer?: ({} & {} & { [K_21 in Exclude<keyof I_1["keymap"]["addLayer"], never>]: never; }) | undefined;
             removeLayer?: ({
                 layerIndex?: number | undefined;
             } & {
                 layerIndex?: number | undefined;
-            } & { [K_20 in Exclude<keyof I_1["keymap"]["removeLayer"], "layerIndex">]: never; }) | undefined;
+            } & { [K_22 in Exclude<keyof I_1["keymap"]["removeLayer"], "layerIndex">]: never; }) | undefined;
             restoreLayer?: ({
                 layerId?: number | undefined;
                 atIndex?: number | undefined;
             } & {
                 layerId?: number | undefined;
                 atIndex?: number | undefined;
-            } & { [K_21 in Exclude<keyof I_1["keymap"]["restoreLayer"], keyof import("./keymap").RestoreLayerRequest>]: never; }) | undefined;
+            } & { [K_23 in Exclude<keyof I_1["keymap"]["restoreLayer"], keyof import("./keymap").RestoreLayerRequest>]: never; }) | undefined;
             setLayerProps?: ({
                 layerId?: number | undefined;
                 name?: string | undefined;
             } & {
                 layerId?: number | undefined;
                 name?: string | undefined;
-            } & { [K_22 in Exclude<keyof I_1["keymap"]["setLayerProps"], keyof import("./keymap").SetLayerPropsRequest>]: never; }) | undefined;
+            } & { [K_24 in Exclude<keyof I_1["keymap"]["setLayerProps"], keyof import("./keymap").SetLayerPropsRequest>]: never; }) | undefined;
             setLayerKeyName?: ({
                 layerId?: number | undefined;
                 keyPosition?: number | undefined;
@@ -390,9 +447,30 @@ export declare const Request: {
                 layerId?: number | undefined;
                 keyPosition?: number | undefined;
                 name?: string | undefined;
-            } & { [K_23 in Exclude<keyof I_1["keymap"]["setLayerKeyName"], keyof import("./keymap").SetLayerKeyNameRequest>]: never; }) | undefined;
-        } & { [K_24 in Exclude<keyof I_1["keymap"], keyof Request3>]: never; }) | undefined;
-    } & { [K_25 in Exclude<keyof I_1, keyof Request>]: never; }>(object: I_1): Request;
+            } & { [K_25 in Exclude<keyof I_1["keymap"]["setLayerKeyName"], keyof import("./keymap").SetLayerKeyNameRequest>]: never; }) | undefined;
+            setLayerSensorBinding?: ({
+                layerId?: number | undefined;
+                sensorPosition?: number | undefined;
+                binding?: {
+                    behaviorId?: number | undefined;
+                    param1?: number | undefined;
+                    param2?: number | undefined;
+                } | undefined;
+            } & {
+                layerId?: number | undefined;
+                sensorPosition?: number | undefined;
+                binding?: ({
+                    behaviorId?: number | undefined;
+                    param1?: number | undefined;
+                    param2?: number | undefined;
+                } & {
+                    behaviorId?: number | undefined;
+                    param1?: number | undefined;
+                    param2?: number | undefined;
+                } & { [K_26 in Exclude<keyof I_1["keymap"]["setLayerSensorBinding"]["binding"], keyof import("./keymap").BehaviorBinding>]: never; }) | undefined;
+            } & { [K_27 in Exclude<keyof I_1["keymap"]["setLayerSensorBinding"], keyof import("./keymap").SetLayerSensorBindingRequest>]: never; }) | undefined;
+        } & { [K_28 in Exclude<keyof I_1["keymap"], keyof Request3>]: never; }) | undefined;
+    } & { [K_29 in Exclude<keyof I_1, keyof Request>]: never; }>(object: I_1): Request;
 };
 export declare const Response: {
     encode(message: Response, writer?: _m0.Writer): _m0.Writer;
@@ -467,9 +545,15 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 setLayerBinding?: import("./keymap").SetLayerBindingResponse | undefined;
                 checkUnsavedChanges?: boolean | undefined;
@@ -507,9 +591,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
                 } | undefined;
@@ -527,9 +617,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").MoveLayerErrorCode | undefined;
                 } | undefined;
@@ -547,6 +643,11 @@ export declare const Response: {
                             keyNames?: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
+                            }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
                             }[] | undefined;
                         } | undefined;
                     } | undefined;
@@ -569,11 +670,17 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     } | undefined;
                     err?: import("./keymap").RestoreLayerErrorCode | undefined;
                 } | undefined;
                 setLayerProps?: import("./keymap").SetLayerPropsResponse | undefined;
                 setLayerKeyName?: import("./keymap").SetLayerKeyNameResponse | undefined;
+                setLayerSensorBinding?: import("./keymap").SetLayerSensorBindingResponse | undefined;
             } | undefined;
         } | undefined;
         notification?: {
@@ -652,9 +759,15 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 setLayerBinding?: import("./keymap").SetLayerBindingResponse | undefined;
                 checkUnsavedChanges?: boolean | undefined;
@@ -692,9 +805,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
                 } | undefined;
@@ -712,9 +831,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").MoveLayerErrorCode | undefined;
                 } | undefined;
@@ -732,6 +857,11 @@ export declare const Response: {
                             keyNames?: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
+                            }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
                             }[] | undefined;
                         } | undefined;
                     } | undefined;
@@ -754,11 +884,17 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     } | undefined;
                     err?: import("./keymap").RestoreLayerErrorCode | undefined;
                 } | undefined;
                 setLayerProps?: import("./keymap").SetLayerPropsResponse | undefined;
                 setLayerKeyName?: import("./keymap").SetLayerKeyNameResponse | undefined;
+                setLayerSensorBinding?: import("./keymap").SetLayerSensorBindingResponse | undefined;
             } | undefined;
         } & {
             requestId?: number | undefined;
@@ -1090,9 +1226,15 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 setLayerBinding?: import("./keymap").SetLayerBindingResponse | undefined;
                 checkUnsavedChanges?: boolean | undefined;
@@ -1130,9 +1272,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
                 } | undefined;
@@ -1150,9 +1298,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").MoveLayerErrorCode | undefined;
                 } | undefined;
@@ -1170,6 +1324,11 @@ export declare const Response: {
                             keyNames?: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
+                            }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
                             }[] | undefined;
                         } | undefined;
                     } | undefined;
@@ -1192,11 +1351,17 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     } | undefined;
                     err?: import("./keymap").RestoreLayerErrorCode | undefined;
                 } | undefined;
                 setLayerProps?: import("./keymap").SetLayerPropsResponse | undefined;
                 setLayerKeyName?: import("./keymap").SetLayerKeyNameResponse | undefined;
+                setLayerSensorBinding?: import("./keymap").SetLayerSensorBindingResponse | undefined;
             } & {
                 getKeymap?: ({
                     layers?: {
@@ -1211,9 +1376,15 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } & {
                     layers?: ({
                         id?: number | undefined;
@@ -1227,6 +1398,11 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] & ({
                         id?: number | undefined;
                         name?: string | undefined;
@@ -1238,6 +1414,11 @@ export declare const Response: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } & {
                         id?: number | undefined;
@@ -1272,7 +1453,24 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[]>]: never; }) | undefined;
-                    } & { [K_25 in Exclude<keyof I["requestResponse"]["keymap"]["getKeymap"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_26 in Exclude<keyof I["requestResponse"]["keymap"]["getKeymap"]["layers"], keyof {
+                        sensorBindings?: ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] & ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & { [K_25 in Exclude<keyof I["requestResponse"]["keymap"]["getKeymap"]["layers"][number]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_26 in Exclude<keyof I["requestResponse"]["keymap"]["getKeymap"]["layers"][number]["sensorBindings"], keyof {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[]>]: never; }) | undefined;
+                    } & { [K_27 in Exclude<keyof I["requestResponse"]["keymap"]["getKeymap"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_28 in Exclude<keyof I["requestResponse"]["keymap"]["getKeymap"]["layers"], keyof {
                         id?: number | undefined;
                         name?: string | undefined;
                         bindings?: {
@@ -1284,10 +1482,16 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[]>]: never; }) | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
-                } & { [K_27 in Exclude<keyof I["requestResponse"]["keymap"]["getKeymap"], keyof import("./keymap").Keymap>]: never; }) | undefined;
+                    sensorCount?: number | undefined;
+                } & { [K_29 in Exclude<keyof I["requestResponse"]["keymap"]["getKeymap"], keyof import("./keymap").Keymap>]: never; }) | undefined;
                 setLayerBinding?: import("./keymap").SetLayerBindingResponse | undefined;
                 checkUnsavedChanges?: boolean | undefined;
                 saveChanges?: ({
@@ -1296,7 +1500,7 @@ export declare const Response: {
                 } & {
                     ok?: boolean | undefined;
                     err?: import("./keymap").SaveChangesErrorCode | undefined;
-                } & { [K_28 in Exclude<keyof I["requestResponse"]["keymap"]["saveChanges"], keyof import("./keymap").SaveChangesResponse>]: never; }) | undefined;
+                } & { [K_30 in Exclude<keyof I["requestResponse"]["keymap"]["saveChanges"], keyof import("./keymap").SaveChangesResponse>]: never; }) | undefined;
                 discardChanges?: boolean | undefined;
                 getPhysicalLayouts?: ({
                     activeLayoutIndex?: number | undefined;
@@ -1362,7 +1566,7 @@ export declare const Response: {
                             r?: number | undefined;
                             rx?: number | undefined;
                             ry?: number | undefined;
-                        } & { [K_29 in Exclude<keyof I["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"][number], keyof import("./keymap").KeyPhysicalAttrs>]: never; })[] & { [K_30 in Exclude<keyof I["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"], keyof {
+                        } & { [K_31 in Exclude<keyof I["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"][number], keyof import("./keymap").KeyPhysicalAttrs>]: never; })[] & { [K_32 in Exclude<keyof I["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"], keyof {
                             width?: number | undefined;
                             height?: number | undefined;
                             x?: number | undefined;
@@ -1371,7 +1575,7 @@ export declare const Response: {
                             rx?: number | undefined;
                             ry?: number | undefined;
                         }[]>]: never; }) | undefined;
-                    } & { [K_31 in Exclude<keyof I["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"][number], keyof import("./keymap").PhysicalLayout>]: never; })[] & { [K_32 in Exclude<keyof I["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"], keyof {
+                    } & { [K_33 in Exclude<keyof I["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"][number], keyof import("./keymap").PhysicalLayout>]: never; })[] & { [K_34 in Exclude<keyof I["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"], keyof {
                         name?: string | undefined;
                         keys?: {
                             width?: number | undefined;
@@ -1383,7 +1587,7 @@ export declare const Response: {
                             ry?: number | undefined;
                         }[] | undefined;
                     }[]>]: never; }) | undefined;
-                } & { [K_33 in Exclude<keyof I["requestResponse"]["keymap"]["getPhysicalLayouts"], keyof import("./keymap").PhysicalLayouts>]: never; }) | undefined;
+                } & { [K_35 in Exclude<keyof I["requestResponse"]["keymap"]["getPhysicalLayouts"], keyof import("./keymap").PhysicalLayouts>]: never; }) | undefined;
                 setActivePhysicalLayout?: ({
                     ok?: {
                         layers?: {
@@ -1398,9 +1602,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
                 } & {
@@ -1417,9 +1627,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } & {
                         layers?: ({
                             id?: number | undefined;
@@ -1433,6 +1649,11 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] & ({
                             id?: number | undefined;
                             name?: string | undefined;
@@ -1444,6 +1665,11 @@ export declare const Response: {
                             keyNames?: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
+                            }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
                             }[] | undefined;
                         } & {
                             id?: number | undefined;
@@ -1460,7 +1686,7 @@ export declare const Response: {
                                 behaviorId?: number | undefined;
                                 param1?: number | undefined;
                                 param2?: number | undefined;
-                            } & { [K_34 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_35 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"], keyof {
+                            } & { [K_36 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_37 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"], keyof {
                                 behaviorId?: number | undefined;
                                 param1?: number | undefined;
                                 param2?: number | undefined;
@@ -1474,11 +1700,28 @@ export declare const Response: {
                             } & {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
-                            } & { [K_36 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_37 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"], keyof {
+                            } & { [K_38 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_39 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"], keyof {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[]>]: never; }) | undefined;
-                        } & { [K_38 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_39 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"], keyof {
+                            sensorBindings?: ({
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] & ({
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            } & {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            } & { [K_40 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_41 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["sensorBindings"], keyof {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[]>]: never; }) | undefined;
+                        } & { [K_42 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_43 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"], keyof {
                             id?: number | undefined;
                             name?: string | undefined;
                             bindings?: {
@@ -1490,12 +1733,18 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[]>]: never; }) | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
-                    } & { [K_40 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
+                        sensorCount?: number | undefined;
+                    } & { [K_44 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
                     err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
-                } & { [K_41 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"], keyof import("./keymap").SetActivePhysicalLayoutResponse>]: never; }) | undefined;
+                } & { [K_45 in Exclude<keyof I["requestResponse"]["keymap"]["setActivePhysicalLayout"], keyof import("./keymap").SetActivePhysicalLayoutResponse>]: never; }) | undefined;
                 moveLayer?: ({
                     ok?: {
                         layers?: {
@@ -1510,9 +1759,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").MoveLayerErrorCode | undefined;
                 } & {
@@ -1529,9 +1784,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } & {
                         layers?: ({
                             id?: number | undefined;
@@ -1545,6 +1806,11 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] & ({
                             id?: number | undefined;
                             name?: string | undefined;
@@ -1556,6 +1822,11 @@ export declare const Response: {
                             keyNames?: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
+                            }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
                             }[] | undefined;
                         } & {
                             id?: number | undefined;
@@ -1572,7 +1843,7 @@ export declare const Response: {
                                 behaviorId?: number | undefined;
                                 param1?: number | undefined;
                                 param2?: number | undefined;
-                            } & { [K_42 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_43 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"], keyof {
+                            } & { [K_46 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_47 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"], keyof {
                                 behaviorId?: number | undefined;
                                 param1?: number | undefined;
                                 param2?: number | undefined;
@@ -1586,11 +1857,28 @@ export declare const Response: {
                             } & {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
-                            } & { [K_44 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_45 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"], keyof {
+                            } & { [K_48 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_49 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"], keyof {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[]>]: never; }) | undefined;
-                        } & { [K_46 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_47 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"], keyof {
+                            sensorBindings?: ({
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] & ({
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            } & {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            } & { [K_50 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_51 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["sensorBindings"], keyof {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[]>]: never; }) | undefined;
+                        } & { [K_52 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_53 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"], keyof {
                             id?: number | undefined;
                             name?: string | undefined;
                             bindings?: {
@@ -1602,12 +1890,18 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[]>]: never; }) | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
-                    } & { [K_48 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
+                        sensorCount?: number | undefined;
+                    } & { [K_54 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
                     err?: import("./keymap").MoveLayerErrorCode | undefined;
-                } & { [K_49 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"], keyof import("./keymap").MoveLayerResponse>]: never; }) | undefined;
+                } & { [K_55 in Exclude<keyof I["requestResponse"]["keymap"]["moveLayer"], keyof import("./keymap").MoveLayerResponse>]: never; }) | undefined;
                 addLayer?: ({
                     ok?: {
                         index?: number | undefined;
@@ -1622,6 +1916,11 @@ export declare const Response: {
                             keyNames?: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
+                            }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
                             }[] | undefined;
                         } | undefined;
                     } | undefined;
@@ -1640,6 +1939,11 @@ export declare const Response: {
                             keyNames?: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
+                            }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
                             }[] | undefined;
                         } | undefined;
                     } & {
@@ -1656,6 +1960,11 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         } & {
                             id?: number | undefined;
                             name?: string | undefined;
@@ -1671,7 +1980,7 @@ export declare const Response: {
                                 behaviorId?: number | undefined;
                                 param1?: number | undefined;
                                 param2?: number | undefined;
-                            } & { [K_50 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_51 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["bindings"], keyof {
+                            } & { [K_56 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_57 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["bindings"], keyof {
                                 behaviorId?: number | undefined;
                                 param1?: number | undefined;
                                 param2?: number | undefined;
@@ -1685,21 +1994,38 @@ export declare const Response: {
                             } & {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
-                            } & { [K_52 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_53 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["keyNames"], keyof {
+                            } & { [K_58 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_59 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["keyNames"], keyof {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[]>]: never; }) | undefined;
-                        } & { [K_54 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"], keyof import("./keymap").Layer>]: never; }) | undefined;
-                    } & { [K_55 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"]["ok"], keyof import("./keymap").AddLayerResponseDetails>]: never; }) | undefined;
+                            sensorBindings?: ({
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] & ({
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            } & {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            } & { [K_60 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_61 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["sensorBindings"], keyof {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[]>]: never; }) | undefined;
+                        } & { [K_62 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"], keyof import("./keymap").Layer>]: never; }) | undefined;
+                    } & { [K_63 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"]["ok"], keyof import("./keymap").AddLayerResponseDetails>]: never; }) | undefined;
                     err?: import("./keymap").AddLayerErrorCode | undefined;
-                } & { [K_56 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"], keyof import("./keymap").AddLayerResponse>]: never; }) | undefined;
+                } & { [K_64 in Exclude<keyof I["requestResponse"]["keymap"]["addLayer"], keyof import("./keymap").AddLayerResponse>]: never; }) | undefined;
                 removeLayer?: ({
                     ok?: {} | undefined;
                     err?: import("./keymap").RemoveLayerErrorCode | undefined;
                 } & {
-                    ok?: ({} & {} & { [K_57 in Exclude<keyof I["requestResponse"]["keymap"]["removeLayer"]["ok"], never>]: never; }) | undefined;
+                    ok?: ({} & {} & { [K_65 in Exclude<keyof I["requestResponse"]["keymap"]["removeLayer"]["ok"], never>]: never; }) | undefined;
                     err?: import("./keymap").RemoveLayerErrorCode | undefined;
-                } & { [K_58 in Exclude<keyof I["requestResponse"]["keymap"]["removeLayer"], keyof import("./keymap").RemoveLayerResponse>]: never; }) | undefined;
+                } & { [K_66 in Exclude<keyof I["requestResponse"]["keymap"]["removeLayer"], keyof import("./keymap").RemoveLayerResponse>]: never; }) | undefined;
                 restoreLayer?: ({
                     ok?: {
                         id?: number | undefined;
@@ -1712,6 +2038,11 @@ export declare const Response: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } | undefined;
                     err?: import("./keymap").RestoreLayerErrorCode | undefined;
@@ -1728,6 +2059,11 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     } & {
                         id?: number | undefined;
                         name?: string | undefined;
@@ -1743,7 +2079,7 @@ export declare const Response: {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
-                        } & { [K_59 in Exclude<keyof I["requestResponse"]["keymap"]["restoreLayer"]["ok"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_60 in Exclude<keyof I["requestResponse"]["keymap"]["restoreLayer"]["ok"]["bindings"], keyof {
+                        } & { [K_67 in Exclude<keyof I["requestResponse"]["keymap"]["restoreLayer"]["ok"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_68 in Exclude<keyof I["requestResponse"]["keymap"]["restoreLayer"]["ok"]["bindings"], keyof {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
@@ -1757,17 +2093,35 @@ export declare const Response: {
                         } & {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
-                        } & { [K_61 in Exclude<keyof I["requestResponse"]["keymap"]["restoreLayer"]["ok"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_62 in Exclude<keyof I["requestResponse"]["keymap"]["restoreLayer"]["ok"]["keyNames"], keyof {
+                        } & { [K_69 in Exclude<keyof I["requestResponse"]["keymap"]["restoreLayer"]["ok"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_70 in Exclude<keyof I["requestResponse"]["keymap"]["restoreLayer"]["ok"]["keyNames"], keyof {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[]>]: never; }) | undefined;
-                    } & { [K_63 in Exclude<keyof I["requestResponse"]["keymap"]["restoreLayer"]["ok"], keyof import("./keymap").Layer>]: never; }) | undefined;
+                        sensorBindings?: ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] & ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & { [K_71 in Exclude<keyof I["requestResponse"]["keymap"]["restoreLayer"]["ok"]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_72 in Exclude<keyof I["requestResponse"]["keymap"]["restoreLayer"]["ok"]["sensorBindings"], keyof {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[]>]: never; }) | undefined;
+                    } & { [K_73 in Exclude<keyof I["requestResponse"]["keymap"]["restoreLayer"]["ok"], keyof import("./keymap").Layer>]: never; }) | undefined;
                     err?: import("./keymap").RestoreLayerErrorCode | undefined;
-                } & { [K_64 in Exclude<keyof I["requestResponse"]["keymap"]["restoreLayer"], keyof import("./keymap").RestoreLayerResponse>]: never; }) | undefined;
+                } & { [K_74 in Exclude<keyof I["requestResponse"]["keymap"]["restoreLayer"], keyof import("./keymap").RestoreLayerResponse>]: never; }) | undefined;
                 setLayerProps?: import("./keymap").SetLayerPropsResponse | undefined;
                 setLayerKeyName?: import("./keymap").SetLayerKeyNameResponse | undefined;
-            } & { [K_65 in Exclude<keyof I["requestResponse"]["keymap"], keyof Response7>]: never; }) | undefined;
-        } & { [K_66 in Exclude<keyof I["requestResponse"], keyof RequestResponse>]: never; }) | undefined;
+                setLayerSensorBinding?: import("./keymap").SetLayerSensorBindingResponse | undefined;
+            } & { [K_75 in Exclude<keyof I["requestResponse"]["keymap"], keyof Response7>]: never; }) | undefined;
+        } & { [K_76 in Exclude<keyof I["requestResponse"], keyof RequestResponse>]: never; }) | undefined;
         notification?: ({
             core?: {
                 lockStateChanged?: import("./core").LockState | undefined;
@@ -1780,14 +2134,14 @@ export declare const Response: {
                 lockStateChanged?: import("./core").LockState | undefined;
             } & {
                 lockStateChanged?: import("./core").LockState | undefined;
-            } & { [K_67 in Exclude<keyof I["notification"]["core"], "lockStateChanged">]: never; }) | undefined;
+            } & { [K_77 in Exclude<keyof I["notification"]["core"], "lockStateChanged">]: never; }) | undefined;
             keymap?: ({
                 unsavedChangesStatusChanged?: boolean | undefined;
             } & {
                 unsavedChangesStatusChanged?: boolean | undefined;
-            } & { [K_68 in Exclude<keyof I["notification"]["keymap"], "unsavedChangesStatusChanged">]: never; }) | undefined;
-        } & { [K_69 in Exclude<keyof I["notification"], keyof Notification>]: never; }) | undefined;
-    } & { [K_70 in Exclude<keyof I, keyof Response>]: never; }>(base?: I | undefined): Response;
+            } & { [K_78 in Exclude<keyof I["notification"]["keymap"], "unsavedChangesStatusChanged">]: never; }) | undefined;
+        } & { [K_79 in Exclude<keyof I["notification"], keyof Notification>]: never; }) | undefined;
+    } & { [K_80 in Exclude<keyof I, keyof Response>]: never; }>(base?: I | undefined): Response;
     fromPartial<I_1 extends {
         requestResponse?: {
             requestId?: number | undefined;
@@ -1856,9 +2210,15 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 setLayerBinding?: import("./keymap").SetLayerBindingResponse | undefined;
                 checkUnsavedChanges?: boolean | undefined;
@@ -1896,9 +2256,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
                 } | undefined;
@@ -1916,9 +2282,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").MoveLayerErrorCode | undefined;
                 } | undefined;
@@ -1936,6 +2308,11 @@ export declare const Response: {
                             keyNames?: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
+                            }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
                             }[] | undefined;
                         } | undefined;
                     } | undefined;
@@ -1958,11 +2335,17 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     } | undefined;
                     err?: import("./keymap").RestoreLayerErrorCode | undefined;
                 } | undefined;
                 setLayerProps?: import("./keymap").SetLayerPropsResponse | undefined;
                 setLayerKeyName?: import("./keymap").SetLayerKeyNameResponse | undefined;
+                setLayerSensorBinding?: import("./keymap").SetLayerSensorBindingResponse | undefined;
             } | undefined;
         } | undefined;
         notification?: {
@@ -2041,9 +2424,15 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 setLayerBinding?: import("./keymap").SetLayerBindingResponse | undefined;
                 checkUnsavedChanges?: boolean | undefined;
@@ -2081,9 +2470,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
                 } | undefined;
@@ -2101,9 +2496,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").MoveLayerErrorCode | undefined;
                 } | undefined;
@@ -2121,6 +2522,11 @@ export declare const Response: {
                             keyNames?: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
+                            }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
                             }[] | undefined;
                         } | undefined;
                     } | undefined;
@@ -2143,11 +2549,17 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     } | undefined;
                     err?: import("./keymap").RestoreLayerErrorCode | undefined;
                 } | undefined;
                 setLayerProps?: import("./keymap").SetLayerPropsResponse | undefined;
                 setLayerKeyName?: import("./keymap").SetLayerKeyNameResponse | undefined;
+                setLayerSensorBinding?: import("./keymap").SetLayerSensorBindingResponse | undefined;
             } | undefined;
         } & {
             requestId?: number | undefined;
@@ -2157,7 +2569,7 @@ export declare const Response: {
             } & {
                 noResponse?: boolean | undefined;
                 simpleError?: import("./meta").ErrorConditions | undefined;
-            } & { [K_71 in Exclude<keyof I_1["requestResponse"]["meta"], keyof Response4>]: never; }) | undefined;
+            } & { [K_81 in Exclude<keyof I_1["requestResponse"]["meta"], keyof Response4>]: never; }) | undefined;
             core?: ({
                 getDeviceInfo?: {
                     name?: string | undefined;
@@ -2172,10 +2584,10 @@ export declare const Response: {
                 } & {
                     name?: string | undefined;
                     serialNumber?: Uint8Array | undefined;
-                } & { [K_72 in Exclude<keyof I_1["requestResponse"]["core"]["getDeviceInfo"], keyof import("./core").GetDeviceInfoResponse>]: never; }) | undefined;
+                } & { [K_82 in Exclude<keyof I_1["requestResponse"]["core"]["getDeviceInfo"], keyof import("./core").GetDeviceInfoResponse>]: never; }) | undefined;
                 getLockState?: import("./core").LockState | undefined;
                 resetSettings?: boolean | undefined;
-            } & { [K_73 in Exclude<keyof I_1["requestResponse"]["core"], keyof Response5>]: never; }) | undefined;
+            } & { [K_83 in Exclude<keyof I_1["requestResponse"]["core"], keyof Response5>]: never; }) | undefined;
             behaviors?: ({
                 listAllBehaviors?: {
                     behaviors?: number[] | undefined;
@@ -2218,8 +2630,8 @@ export declare const Response: {
                 listAllBehaviors?: ({
                     behaviors?: number[] | undefined;
                 } & {
-                    behaviors?: (number[] & number[] & { [K_74 in Exclude<keyof I_1["requestResponse"]["behaviors"]["listAllBehaviors"]["behaviors"], keyof number[]>]: never; }) | undefined;
-                } & { [K_75 in Exclude<keyof I_1["requestResponse"]["behaviors"]["listAllBehaviors"], "behaviors">]: never; }) | undefined;
+                    behaviors?: (number[] & number[] & { [K_84 in Exclude<keyof I_1["requestResponse"]["behaviors"]["listAllBehaviors"]["behaviors"], keyof number[]>]: never; }) | undefined;
+                } & { [K_85 in Exclude<keyof I_1["requestResponse"]["behaviors"]["listAllBehaviors"], "behaviors">]: never; }) | undefined;
                 getBehaviorDetails?: ({
                     id?: number | undefined;
                     displayName?: string | undefined;
@@ -2343,7 +2755,7 @@ export declare const Response: {
                             layerId?: {} | undefined;
                         } & {
                             name?: string | undefined;
-                            nil?: ({} & {} & { [K_76 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["nil"], never>]: never; }) | undefined;
+                            nil?: ({} & {} & { [K_86 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["nil"], never>]: never; }) | undefined;
                             constant?: number | undefined;
                             range?: ({
                                 min?: number | undefined;
@@ -2351,16 +2763,16 @@ export declare const Response: {
                             } & {
                                 min?: number | undefined;
                                 max?: number | undefined;
-                            } & { [K_77 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["range"], keyof import("./behaviors").BehaviorParameterValueDescriptionRange>]: never; }) | undefined;
+                            } & { [K_87 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["range"], keyof import("./behaviors").BehaviorParameterValueDescriptionRange>]: never; }) | undefined;
                             hidUsage?: ({
                                 keyboardMax?: number | undefined;
                                 consumerMax?: number | undefined;
                             } & {
                                 keyboardMax?: number | undefined;
                                 consumerMax?: number | undefined;
-                            } & { [K_78 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["hidUsage"], keyof import("./behaviors").BehaviorParameterHidUsage>]: never; }) | undefined;
-                            layerId?: ({} & {} & { [K_79 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["layerId"], never>]: never; }) | undefined;
-                        } & { [K_80 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number], keyof import("./behaviors").BehaviorParameterValueDescription>]: never; })[] & { [K_81 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"], keyof {
+                            } & { [K_88 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["hidUsage"], keyof import("./behaviors").BehaviorParameterHidUsage>]: never; }) | undefined;
+                            layerId?: ({} & {} & { [K_89 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["layerId"], never>]: never; }) | undefined;
+                        } & { [K_90 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number], keyof import("./behaviors").BehaviorParameterValueDescription>]: never; })[] & { [K_91 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"], keyof {
                             name?: string | undefined;
                             nil?: {} | undefined;
                             constant?: number | undefined;
@@ -2402,7 +2814,7 @@ export declare const Response: {
                             layerId?: {} | undefined;
                         } & {
                             name?: string | undefined;
-                            nil?: ({} & {} & { [K_82 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["nil"], never>]: never; }) | undefined;
+                            nil?: ({} & {} & { [K_92 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["nil"], never>]: never; }) | undefined;
                             constant?: number | undefined;
                             range?: ({
                                 min?: number | undefined;
@@ -2410,16 +2822,16 @@ export declare const Response: {
                             } & {
                                 min?: number | undefined;
                                 max?: number | undefined;
-                            } & { [K_83 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["range"], keyof import("./behaviors").BehaviorParameterValueDescriptionRange>]: never; }) | undefined;
+                            } & { [K_93 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["range"], keyof import("./behaviors").BehaviorParameterValueDescriptionRange>]: never; }) | undefined;
                             hidUsage?: ({
                                 keyboardMax?: number | undefined;
                                 consumerMax?: number | undefined;
                             } & {
                                 keyboardMax?: number | undefined;
                                 consumerMax?: number | undefined;
-                            } & { [K_84 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["hidUsage"], keyof import("./behaviors").BehaviorParameterHidUsage>]: never; }) | undefined;
-                            layerId?: ({} & {} & { [K_85 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["layerId"], never>]: never; }) | undefined;
-                        } & { [K_86 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number], keyof import("./behaviors").BehaviorParameterValueDescription>]: never; })[] & { [K_87 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"], keyof {
+                            } & { [K_94 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["hidUsage"], keyof import("./behaviors").BehaviorParameterHidUsage>]: never; }) | undefined;
+                            layerId?: ({} & {} & { [K_95 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["layerId"], never>]: never; }) | undefined;
+                        } & { [K_96 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number], keyof import("./behaviors").BehaviorParameterValueDescription>]: never; })[] & { [K_97 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"], keyof {
                             name?: string | undefined;
                             nil?: {} | undefined;
                             constant?: number | undefined;
@@ -2433,7 +2845,7 @@ export declare const Response: {
                             } | undefined;
                             layerId?: {} | undefined;
                         }[]>]: never; }) | undefined;
-                    } & { [K_88 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number], keyof import("./behaviors").BehaviorBindingParametersSet>]: never; })[] & { [K_89 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"], keyof {
+                    } & { [K_98 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"][number], keyof import("./behaviors").BehaviorBindingParametersSet>]: never; })[] & { [K_99 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"]["metadata"], keyof {
                         param1?: {
                             name?: string | undefined;
                             nil?: {} | undefined;
@@ -2463,8 +2875,8 @@ export declare const Response: {
                             layerId?: {} | undefined;
                         }[] | undefined;
                     }[]>]: never; }) | undefined;
-                } & { [K_90 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"], keyof import("./behaviors").GetBehaviorDetailsResponse>]: never; }) | undefined;
-            } & { [K_91 in Exclude<keyof I_1["requestResponse"]["behaviors"], keyof Response6>]: never; }) | undefined;
+                } & { [K_100 in Exclude<keyof I_1["requestResponse"]["behaviors"]["getBehaviorDetails"], keyof import("./behaviors").GetBehaviorDetailsResponse>]: never; }) | undefined;
+            } & { [K_101 in Exclude<keyof I_1["requestResponse"]["behaviors"], keyof Response6>]: never; }) | undefined;
             keymap?: ({
                 getKeymap?: {
                     layers?: {
@@ -2479,9 +2891,15 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 setLayerBinding?: import("./keymap").SetLayerBindingResponse | undefined;
                 checkUnsavedChanges?: boolean | undefined;
@@ -2519,9 +2937,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
                 } | undefined;
@@ -2539,9 +2963,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").MoveLayerErrorCode | undefined;
                 } | undefined;
@@ -2559,6 +2989,11 @@ export declare const Response: {
                             keyNames?: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
+                            }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
                             }[] | undefined;
                         } | undefined;
                     } | undefined;
@@ -2581,11 +3016,17 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     } | undefined;
                     err?: import("./keymap").RestoreLayerErrorCode | undefined;
                 } | undefined;
                 setLayerProps?: import("./keymap").SetLayerPropsResponse | undefined;
                 setLayerKeyName?: import("./keymap").SetLayerKeyNameResponse | undefined;
+                setLayerSensorBinding?: import("./keymap").SetLayerSensorBindingResponse | undefined;
             } & {
                 getKeymap?: ({
                     layers?: {
@@ -2600,9 +3041,15 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } & {
                     layers?: ({
                         id?: number | undefined;
@@ -2616,6 +3063,11 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] & ({
                         id?: number | undefined;
                         name?: string | undefined;
@@ -2627,6 +3079,11 @@ export declare const Response: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } & {
                         id?: number | undefined;
@@ -2643,7 +3100,7 @@ export declare const Response: {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
-                        } & { [K_92 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_93 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"]["layers"][number]["bindings"], keyof {
+                        } & { [K_102 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_103 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"]["layers"][number]["bindings"], keyof {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
@@ -2657,11 +3114,28 @@ export declare const Response: {
                         } & {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
-                        } & { [K_94 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_95 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"]["layers"][number]["keyNames"], keyof {
+                        } & { [K_104 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_105 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"]["layers"][number]["keyNames"], keyof {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[]>]: never; }) | undefined;
-                    } & { [K_96 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_97 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"]["layers"], keyof {
+                        sensorBindings?: ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] & ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & { [K_106 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"]["layers"][number]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_107 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"]["layers"][number]["sensorBindings"], keyof {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[]>]: never; }) | undefined;
+                    } & { [K_108 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_109 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"]["layers"], keyof {
                         id?: number | undefined;
                         name?: string | undefined;
                         bindings?: {
@@ -2673,10 +3147,16 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[]>]: never; }) | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
-                } & { [K_98 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"], keyof import("./keymap").Keymap>]: never; }) | undefined;
+                    sensorCount?: number | undefined;
+                } & { [K_110 in Exclude<keyof I_1["requestResponse"]["keymap"]["getKeymap"], keyof import("./keymap").Keymap>]: never; }) | undefined;
                 setLayerBinding?: import("./keymap").SetLayerBindingResponse | undefined;
                 checkUnsavedChanges?: boolean | undefined;
                 saveChanges?: ({
@@ -2685,7 +3165,7 @@ export declare const Response: {
                 } & {
                     ok?: boolean | undefined;
                     err?: import("./keymap").SaveChangesErrorCode | undefined;
-                } & { [K_99 in Exclude<keyof I_1["requestResponse"]["keymap"]["saveChanges"], keyof import("./keymap").SaveChangesResponse>]: never; }) | undefined;
+                } & { [K_111 in Exclude<keyof I_1["requestResponse"]["keymap"]["saveChanges"], keyof import("./keymap").SaveChangesResponse>]: never; }) | undefined;
                 discardChanges?: boolean | undefined;
                 getPhysicalLayouts?: ({
                     activeLayoutIndex?: number | undefined;
@@ -2751,7 +3231,7 @@ export declare const Response: {
                             r?: number | undefined;
                             rx?: number | undefined;
                             ry?: number | undefined;
-                        } & { [K_100 in Exclude<keyof I_1["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"][number], keyof import("./keymap").KeyPhysicalAttrs>]: never; })[] & { [K_101 in Exclude<keyof I_1["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"], keyof {
+                        } & { [K_112 in Exclude<keyof I_1["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"][number], keyof import("./keymap").KeyPhysicalAttrs>]: never; })[] & { [K_113 in Exclude<keyof I_1["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"], keyof {
                             width?: number | undefined;
                             height?: number | undefined;
                             x?: number | undefined;
@@ -2760,7 +3240,7 @@ export declare const Response: {
                             rx?: number | undefined;
                             ry?: number | undefined;
                         }[]>]: never; }) | undefined;
-                    } & { [K_102 in Exclude<keyof I_1["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"][number], keyof import("./keymap").PhysicalLayout>]: never; })[] & { [K_103 in Exclude<keyof I_1["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"], keyof {
+                    } & { [K_114 in Exclude<keyof I_1["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"][number], keyof import("./keymap").PhysicalLayout>]: never; })[] & { [K_115 in Exclude<keyof I_1["requestResponse"]["keymap"]["getPhysicalLayouts"]["layouts"], keyof {
                         name?: string | undefined;
                         keys?: {
                             width?: number | undefined;
@@ -2772,7 +3252,7 @@ export declare const Response: {
                             ry?: number | undefined;
                         }[] | undefined;
                     }[]>]: never; }) | undefined;
-                } & { [K_104 in Exclude<keyof I_1["requestResponse"]["keymap"]["getPhysicalLayouts"], keyof import("./keymap").PhysicalLayouts>]: never; }) | undefined;
+                } & { [K_116 in Exclude<keyof I_1["requestResponse"]["keymap"]["getPhysicalLayouts"], keyof import("./keymap").PhysicalLayouts>]: never; }) | undefined;
                 setActivePhysicalLayout?: ({
                     ok?: {
                         layers?: {
@@ -2787,9 +3267,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
                 } & {
@@ -2806,9 +3292,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } & {
                         layers?: ({
                             id?: number | undefined;
@@ -2822,6 +3314,11 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] & ({
                             id?: number | undefined;
                             name?: string | undefined;
@@ -2833,6 +3330,11 @@ export declare const Response: {
                             keyNames?: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
+                            }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
                             }[] | undefined;
                         } & {
                             id?: number | undefined;
@@ -2849,7 +3351,7 @@ export declare const Response: {
                                 behaviorId?: number | undefined;
                                 param1?: number | undefined;
                                 param2?: number | undefined;
-                            } & { [K_105 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_106 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"], keyof {
+                            } & { [K_117 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_118 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"], keyof {
                                 behaviorId?: number | undefined;
                                 param1?: number | undefined;
                                 param2?: number | undefined;
@@ -2863,11 +3365,28 @@ export declare const Response: {
                             } & {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
-                            } & { [K_107 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_108 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"], keyof {
+                            } & { [K_119 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_120 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"], keyof {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[]>]: never; }) | undefined;
-                        } & { [K_109 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_110 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"], keyof {
+                            sensorBindings?: ({
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] & ({
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            } & {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            } & { [K_121 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_122 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["sensorBindings"], keyof {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[]>]: never; }) | undefined;
+                        } & { [K_123 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_124 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"]["layers"], keyof {
                             id?: number | undefined;
                             name?: string | undefined;
                             bindings?: {
@@ -2879,12 +3398,18 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[]>]: never; }) | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
-                    } & { [K_111 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
+                        sensorCount?: number | undefined;
+                    } & { [K_125 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
                     err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
-                } & { [K_112 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"], keyof import("./keymap").SetActivePhysicalLayoutResponse>]: never; }) | undefined;
+                } & { [K_126 in Exclude<keyof I_1["requestResponse"]["keymap"]["setActivePhysicalLayout"], keyof import("./keymap").SetActivePhysicalLayoutResponse>]: never; }) | undefined;
                 moveLayer?: ({
                     ok?: {
                         layers?: {
@@ -2899,9 +3424,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } | undefined;
                     err?: import("./keymap").MoveLayerErrorCode | undefined;
                 } & {
@@ -2918,9 +3449,15 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
+                        sensorCount?: number | undefined;
                     } & {
                         layers?: ({
                             id?: number | undefined;
@@ -2934,6 +3471,11 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[] & ({
                             id?: number | undefined;
                             name?: string | undefined;
@@ -2945,6 +3487,11 @@ export declare const Response: {
                             keyNames?: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
+                            }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
                             }[] | undefined;
                         } & {
                             id?: number | undefined;
@@ -2961,7 +3508,7 @@ export declare const Response: {
                                 behaviorId?: number | undefined;
                                 param1?: number | undefined;
                                 param2?: number | undefined;
-                            } & { [K_113 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_114 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"], keyof {
+                            } & { [K_127 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_128 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"], keyof {
                                 behaviorId?: number | undefined;
                                 param1?: number | undefined;
                                 param2?: number | undefined;
@@ -2975,11 +3522,28 @@ export declare const Response: {
                             } & {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
-                            } & { [K_115 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_116 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"], keyof {
+                            } & { [K_129 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_130 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"], keyof {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[]>]: never; }) | undefined;
-                        } & { [K_117 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_118 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"], keyof {
+                            sensorBindings?: ({
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] & ({
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            } & {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            } & { [K_131 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_132 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number]["sensorBindings"], keyof {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[]>]: never; }) | undefined;
+                        } & { [K_133 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_134 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"]["layers"], keyof {
                             id?: number | undefined;
                             name?: string | undefined;
                             bindings?: {
@@ -2991,12 +3555,18 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         }[]>]: never; }) | undefined;
                         availableLayers?: number | undefined;
                         maxLayerNameLength?: number | undefined;
-                    } & { [K_119 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
+                        sensorCount?: number | undefined;
+                    } & { [K_135 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
                     err?: import("./keymap").MoveLayerErrorCode | undefined;
-                } & { [K_120 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"], keyof import("./keymap").MoveLayerResponse>]: never; }) | undefined;
+                } & { [K_136 in Exclude<keyof I_1["requestResponse"]["keymap"]["moveLayer"], keyof import("./keymap").MoveLayerResponse>]: never; }) | undefined;
                 addLayer?: ({
                     ok?: {
                         index?: number | undefined;
@@ -3011,6 +3581,11 @@ export declare const Response: {
                             keyNames?: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
+                            }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
                             }[] | undefined;
                         } | undefined;
                     } | undefined;
@@ -3029,6 +3604,11 @@ export declare const Response: {
                             keyNames?: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
+                            }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
                             }[] | undefined;
                         } | undefined;
                     } & {
@@ -3045,6 +3625,11 @@ export declare const Response: {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[] | undefined;
+                            sensorBindings?: {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] | undefined;
                         } & {
                             id?: number | undefined;
                             name?: string | undefined;
@@ -3060,7 +3645,7 @@ export declare const Response: {
                                 behaviorId?: number | undefined;
                                 param1?: number | undefined;
                                 param2?: number | undefined;
-                            } & { [K_121 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_122 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["bindings"], keyof {
+                            } & { [K_137 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_138 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["bindings"], keyof {
                                 behaviorId?: number | undefined;
                                 param1?: number | undefined;
                                 param2?: number | undefined;
@@ -3074,21 +3659,38 @@ export declare const Response: {
                             } & {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
-                            } & { [K_123 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_124 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["keyNames"], keyof {
+                            } & { [K_139 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_140 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["keyNames"], keyof {
                                 keyPosition?: number | undefined;
                                 name?: string | undefined;
                             }[]>]: never; }) | undefined;
-                        } & { [K_125 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"], keyof import("./keymap").Layer>]: never; }) | undefined;
-                    } & { [K_126 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"]["ok"], keyof import("./keymap").AddLayerResponseDetails>]: never; }) | undefined;
+                            sensorBindings?: ({
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[] & ({
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            } & {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            } & { [K_141 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_142 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"]["sensorBindings"], keyof {
+                                behaviorId?: number | undefined;
+                                param1?: number | undefined;
+                                param2?: number | undefined;
+                            }[]>]: never; }) | undefined;
+                        } & { [K_143 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"]["ok"]["layer"], keyof import("./keymap").Layer>]: never; }) | undefined;
+                    } & { [K_144 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"]["ok"], keyof import("./keymap").AddLayerResponseDetails>]: never; }) | undefined;
                     err?: import("./keymap").AddLayerErrorCode | undefined;
-                } & { [K_127 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"], keyof import("./keymap").AddLayerResponse>]: never; }) | undefined;
+                } & { [K_145 in Exclude<keyof I_1["requestResponse"]["keymap"]["addLayer"], keyof import("./keymap").AddLayerResponse>]: never; }) | undefined;
                 removeLayer?: ({
                     ok?: {} | undefined;
                     err?: import("./keymap").RemoveLayerErrorCode | undefined;
                 } & {
-                    ok?: ({} & {} & { [K_128 in Exclude<keyof I_1["requestResponse"]["keymap"]["removeLayer"]["ok"], never>]: never; }) | undefined;
+                    ok?: ({} & {} & { [K_146 in Exclude<keyof I_1["requestResponse"]["keymap"]["removeLayer"]["ok"], never>]: never; }) | undefined;
                     err?: import("./keymap").RemoveLayerErrorCode | undefined;
-                } & { [K_129 in Exclude<keyof I_1["requestResponse"]["keymap"]["removeLayer"], keyof import("./keymap").RemoveLayerResponse>]: never; }) | undefined;
+                } & { [K_147 in Exclude<keyof I_1["requestResponse"]["keymap"]["removeLayer"], keyof import("./keymap").RemoveLayerResponse>]: never; }) | undefined;
                 restoreLayer?: ({
                     ok?: {
                         id?: number | undefined;
@@ -3101,6 +3703,11 @@ export declare const Response: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } | undefined;
                     err?: import("./keymap").RestoreLayerErrorCode | undefined;
@@ -3117,6 +3724,11 @@ export declare const Response: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     } & {
                         id?: number | undefined;
                         name?: string | undefined;
@@ -3132,7 +3744,7 @@ export declare const Response: {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
-                        } & { [K_130 in Exclude<keyof I_1["requestResponse"]["keymap"]["restoreLayer"]["ok"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_131 in Exclude<keyof I_1["requestResponse"]["keymap"]["restoreLayer"]["ok"]["bindings"], keyof {
+                        } & { [K_148 in Exclude<keyof I_1["requestResponse"]["keymap"]["restoreLayer"]["ok"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_149 in Exclude<keyof I_1["requestResponse"]["keymap"]["restoreLayer"]["ok"]["bindings"], keyof {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
@@ -3146,17 +3758,35 @@ export declare const Response: {
                         } & {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
-                        } & { [K_132 in Exclude<keyof I_1["requestResponse"]["keymap"]["restoreLayer"]["ok"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_133 in Exclude<keyof I_1["requestResponse"]["keymap"]["restoreLayer"]["ok"]["keyNames"], keyof {
+                        } & { [K_150 in Exclude<keyof I_1["requestResponse"]["keymap"]["restoreLayer"]["ok"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_151 in Exclude<keyof I_1["requestResponse"]["keymap"]["restoreLayer"]["ok"]["keyNames"], keyof {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[]>]: never; }) | undefined;
-                    } & { [K_134 in Exclude<keyof I_1["requestResponse"]["keymap"]["restoreLayer"]["ok"], keyof import("./keymap").Layer>]: never; }) | undefined;
+                        sensorBindings?: ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] & ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & { [K_152 in Exclude<keyof I_1["requestResponse"]["keymap"]["restoreLayer"]["ok"]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_153 in Exclude<keyof I_1["requestResponse"]["keymap"]["restoreLayer"]["ok"]["sensorBindings"], keyof {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[]>]: never; }) | undefined;
+                    } & { [K_154 in Exclude<keyof I_1["requestResponse"]["keymap"]["restoreLayer"]["ok"], keyof import("./keymap").Layer>]: never; }) | undefined;
                     err?: import("./keymap").RestoreLayerErrorCode | undefined;
-                } & { [K_135 in Exclude<keyof I_1["requestResponse"]["keymap"]["restoreLayer"], keyof import("./keymap").RestoreLayerResponse>]: never; }) | undefined;
+                } & { [K_155 in Exclude<keyof I_1["requestResponse"]["keymap"]["restoreLayer"], keyof import("./keymap").RestoreLayerResponse>]: never; }) | undefined;
                 setLayerProps?: import("./keymap").SetLayerPropsResponse | undefined;
                 setLayerKeyName?: import("./keymap").SetLayerKeyNameResponse | undefined;
-            } & { [K_136 in Exclude<keyof I_1["requestResponse"]["keymap"], keyof Response7>]: never; }) | undefined;
-        } & { [K_137 in Exclude<keyof I_1["requestResponse"], keyof RequestResponse>]: never; }) | undefined;
+                setLayerSensorBinding?: import("./keymap").SetLayerSensorBindingResponse | undefined;
+            } & { [K_156 in Exclude<keyof I_1["requestResponse"]["keymap"], keyof Response7>]: never; }) | undefined;
+        } & { [K_157 in Exclude<keyof I_1["requestResponse"], keyof RequestResponse>]: never; }) | undefined;
         notification?: ({
             core?: {
                 lockStateChanged?: import("./core").LockState | undefined;
@@ -3169,14 +3799,14 @@ export declare const Response: {
                 lockStateChanged?: import("./core").LockState | undefined;
             } & {
                 lockStateChanged?: import("./core").LockState | undefined;
-            } & { [K_138 in Exclude<keyof I_1["notification"]["core"], "lockStateChanged">]: never; }) | undefined;
+            } & { [K_158 in Exclude<keyof I_1["notification"]["core"], "lockStateChanged">]: never; }) | undefined;
             keymap?: ({
                 unsavedChangesStatusChanged?: boolean | undefined;
             } & {
                 unsavedChangesStatusChanged?: boolean | undefined;
-            } & { [K_139 in Exclude<keyof I_1["notification"]["keymap"], "unsavedChangesStatusChanged">]: never; }) | undefined;
-        } & { [K_140 in Exclude<keyof I_1["notification"], keyof Notification>]: never; }) | undefined;
-    } & { [K_141 in Exclude<keyof I_1, keyof Response>]: never; }>(object: I_1): Response;
+            } & { [K_159 in Exclude<keyof I_1["notification"]["keymap"], "unsavedChangesStatusChanged">]: never; }) | undefined;
+        } & { [K_160 in Exclude<keyof I_1["notification"], keyof Notification>]: never; }) | undefined;
+    } & { [K_161 in Exclude<keyof I_1, keyof Response>]: never; }>(object: I_1): Response;
 };
 export declare const RequestResponse: {
     encode(message: RequestResponse, writer?: _m0.Writer): _m0.Writer;
@@ -3250,9 +3880,15 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 }[] | undefined;
                 availableLayers?: number | undefined;
                 maxLayerNameLength?: number | undefined;
+                sensorCount?: number | undefined;
             } | undefined;
             setLayerBinding?: import("./keymap").SetLayerBindingResponse | undefined;
             checkUnsavedChanges?: boolean | undefined;
@@ -3290,9 +3926,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
             } | undefined;
@@ -3310,9 +3952,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 err?: import("./keymap").MoveLayerErrorCode | undefined;
             } | undefined;
@@ -3330,6 +3978,11 @@ export declare const RequestResponse: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } | undefined;
                 } | undefined;
@@ -3352,11 +4005,17 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 } | undefined;
                 err?: import("./keymap").RestoreLayerErrorCode | undefined;
             } | undefined;
             setLayerProps?: import("./keymap").SetLayerPropsResponse | undefined;
             setLayerKeyName?: import("./keymap").SetLayerKeyNameResponse | undefined;
+            setLayerSensorBinding?: import("./keymap").SetLayerSensorBindingResponse | undefined;
         } | undefined;
     } & {
         requestId?: number | undefined;
@@ -3688,9 +4347,15 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 }[] | undefined;
                 availableLayers?: number | undefined;
                 maxLayerNameLength?: number | undefined;
+                sensorCount?: number | undefined;
             } | undefined;
             setLayerBinding?: import("./keymap").SetLayerBindingResponse | undefined;
             checkUnsavedChanges?: boolean | undefined;
@@ -3728,9 +4393,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
             } | undefined;
@@ -3748,9 +4419,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 err?: import("./keymap").MoveLayerErrorCode | undefined;
             } | undefined;
@@ -3768,6 +4445,11 @@ export declare const RequestResponse: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } | undefined;
                 } | undefined;
@@ -3790,11 +4472,17 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 } | undefined;
                 err?: import("./keymap").RestoreLayerErrorCode | undefined;
             } | undefined;
             setLayerProps?: import("./keymap").SetLayerPropsResponse | undefined;
             setLayerKeyName?: import("./keymap").SetLayerKeyNameResponse | undefined;
+            setLayerSensorBinding?: import("./keymap").SetLayerSensorBindingResponse | undefined;
         } & {
             getKeymap?: ({
                 layers?: {
@@ -3809,9 +4497,15 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 }[] | undefined;
                 availableLayers?: number | undefined;
                 maxLayerNameLength?: number | undefined;
+                sensorCount?: number | undefined;
             } & {
                 layers?: ({
                     id?: number | undefined;
@@ -3825,6 +4519,11 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 }[] & ({
                     id?: number | undefined;
                     name?: string | undefined;
@@ -3836,6 +4535,11 @@ export declare const RequestResponse: {
                     keyNames?: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
+                    }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
                     }[] | undefined;
                 } & {
                     id?: number | undefined;
@@ -3870,7 +4574,24 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[]>]: never; }) | undefined;
-                } & { [K_25 in Exclude<keyof I["keymap"]["getKeymap"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_26 in Exclude<keyof I["keymap"]["getKeymap"]["layers"], keyof {
+                    sensorBindings?: ({
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] & ({
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    } & {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    } & { [K_25 in Exclude<keyof I["keymap"]["getKeymap"]["layers"][number]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_26 in Exclude<keyof I["keymap"]["getKeymap"]["layers"][number]["sensorBindings"], keyof {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[]>]: never; }) | undefined;
+                } & { [K_27 in Exclude<keyof I["keymap"]["getKeymap"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_28 in Exclude<keyof I["keymap"]["getKeymap"]["layers"], keyof {
                     id?: number | undefined;
                     name?: string | undefined;
                     bindings?: {
@@ -3882,10 +4603,16 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 }[]>]: never; }) | undefined;
                 availableLayers?: number | undefined;
                 maxLayerNameLength?: number | undefined;
-            } & { [K_27 in Exclude<keyof I["keymap"]["getKeymap"], keyof import("./keymap").Keymap>]: never; }) | undefined;
+                sensorCount?: number | undefined;
+            } & { [K_29 in Exclude<keyof I["keymap"]["getKeymap"], keyof import("./keymap").Keymap>]: never; }) | undefined;
             setLayerBinding?: import("./keymap").SetLayerBindingResponse | undefined;
             checkUnsavedChanges?: boolean | undefined;
             saveChanges?: ({
@@ -3894,7 +4621,7 @@ export declare const RequestResponse: {
             } & {
                 ok?: boolean | undefined;
                 err?: import("./keymap").SaveChangesErrorCode | undefined;
-            } & { [K_28 in Exclude<keyof I["keymap"]["saveChanges"], keyof import("./keymap").SaveChangesResponse>]: never; }) | undefined;
+            } & { [K_30 in Exclude<keyof I["keymap"]["saveChanges"], keyof import("./keymap").SaveChangesResponse>]: never; }) | undefined;
             discardChanges?: boolean | undefined;
             getPhysicalLayouts?: ({
                 activeLayoutIndex?: number | undefined;
@@ -3960,7 +4687,7 @@ export declare const RequestResponse: {
                         r?: number | undefined;
                         rx?: number | undefined;
                         ry?: number | undefined;
-                    } & { [K_29 in Exclude<keyof I["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"][number], keyof import("./keymap").KeyPhysicalAttrs>]: never; })[] & { [K_30 in Exclude<keyof I["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"], keyof {
+                    } & { [K_31 in Exclude<keyof I["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"][number], keyof import("./keymap").KeyPhysicalAttrs>]: never; })[] & { [K_32 in Exclude<keyof I["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"], keyof {
                         width?: number | undefined;
                         height?: number | undefined;
                         x?: number | undefined;
@@ -3969,7 +4696,7 @@ export declare const RequestResponse: {
                         rx?: number | undefined;
                         ry?: number | undefined;
                     }[]>]: never; }) | undefined;
-                } & { [K_31 in Exclude<keyof I["keymap"]["getPhysicalLayouts"]["layouts"][number], keyof import("./keymap").PhysicalLayout>]: never; })[] & { [K_32 in Exclude<keyof I["keymap"]["getPhysicalLayouts"]["layouts"], keyof {
+                } & { [K_33 in Exclude<keyof I["keymap"]["getPhysicalLayouts"]["layouts"][number], keyof import("./keymap").PhysicalLayout>]: never; })[] & { [K_34 in Exclude<keyof I["keymap"]["getPhysicalLayouts"]["layouts"], keyof {
                     name?: string | undefined;
                     keys?: {
                         width?: number | undefined;
@@ -3981,7 +4708,7 @@ export declare const RequestResponse: {
                         ry?: number | undefined;
                     }[] | undefined;
                 }[]>]: never; }) | undefined;
-            } & { [K_33 in Exclude<keyof I["keymap"]["getPhysicalLayouts"], keyof import("./keymap").PhysicalLayouts>]: never; }) | undefined;
+            } & { [K_35 in Exclude<keyof I["keymap"]["getPhysicalLayouts"], keyof import("./keymap").PhysicalLayouts>]: never; }) | undefined;
             setActivePhysicalLayout?: ({
                 ok?: {
                     layers?: {
@@ -3996,9 +4723,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
             } & {
@@ -4015,9 +4748,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } & {
                     layers?: ({
                         id?: number | undefined;
@@ -4031,6 +4770,11 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] & ({
                         id?: number | undefined;
                         name?: string | undefined;
@@ -4042,6 +4786,11 @@ export declare const RequestResponse: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } & {
                         id?: number | undefined;
@@ -4058,7 +4807,7 @@ export declare const RequestResponse: {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
-                        } & { [K_34 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_35 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"], keyof {
+                        } & { [K_36 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_37 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"], keyof {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
@@ -4072,11 +4821,28 @@ export declare const RequestResponse: {
                         } & {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
-                        } & { [K_36 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_37 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"], keyof {
+                        } & { [K_38 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_39 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"], keyof {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[]>]: never; }) | undefined;
-                    } & { [K_38 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_39 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"]["layers"], keyof {
+                        sensorBindings?: ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] & ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & { [K_40 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_41 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["sensorBindings"], keyof {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[]>]: never; }) | undefined;
+                    } & { [K_42 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_43 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"]["layers"], keyof {
                         id?: number | undefined;
                         name?: string | undefined;
                         bindings?: {
@@ -4088,12 +4854,18 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[]>]: never; }) | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
-                } & { [K_40 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
+                    sensorCount?: number | undefined;
+                } & { [K_44 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
                 err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
-            } & { [K_41 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"], keyof import("./keymap").SetActivePhysicalLayoutResponse>]: never; }) | undefined;
+            } & { [K_45 in Exclude<keyof I["keymap"]["setActivePhysicalLayout"], keyof import("./keymap").SetActivePhysicalLayoutResponse>]: never; }) | undefined;
             moveLayer?: ({
                 ok?: {
                     layers?: {
@@ -4108,9 +4880,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 err?: import("./keymap").MoveLayerErrorCode | undefined;
             } & {
@@ -4127,9 +4905,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } & {
                     layers?: ({
                         id?: number | undefined;
@@ -4143,6 +4927,11 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] & ({
                         id?: number | undefined;
                         name?: string | undefined;
@@ -4154,6 +4943,11 @@ export declare const RequestResponse: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } & {
                         id?: number | undefined;
@@ -4170,7 +4964,7 @@ export declare const RequestResponse: {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
-                        } & { [K_42 in Exclude<keyof I["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_43 in Exclude<keyof I["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"], keyof {
+                        } & { [K_46 in Exclude<keyof I["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_47 in Exclude<keyof I["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"], keyof {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
@@ -4184,11 +4978,28 @@ export declare const RequestResponse: {
                         } & {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
-                        } & { [K_44 in Exclude<keyof I["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_45 in Exclude<keyof I["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"], keyof {
+                        } & { [K_48 in Exclude<keyof I["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_49 in Exclude<keyof I["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"], keyof {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[]>]: never; }) | undefined;
-                    } & { [K_46 in Exclude<keyof I["keymap"]["moveLayer"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_47 in Exclude<keyof I["keymap"]["moveLayer"]["ok"]["layers"], keyof {
+                        sensorBindings?: ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] & ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & { [K_50 in Exclude<keyof I["keymap"]["moveLayer"]["ok"]["layers"][number]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_51 in Exclude<keyof I["keymap"]["moveLayer"]["ok"]["layers"][number]["sensorBindings"], keyof {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[]>]: never; }) | undefined;
+                    } & { [K_52 in Exclude<keyof I["keymap"]["moveLayer"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_53 in Exclude<keyof I["keymap"]["moveLayer"]["ok"]["layers"], keyof {
                         id?: number | undefined;
                         name?: string | undefined;
                         bindings?: {
@@ -4200,12 +5011,18 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[]>]: never; }) | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
-                } & { [K_48 in Exclude<keyof I["keymap"]["moveLayer"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
+                    sensorCount?: number | undefined;
+                } & { [K_54 in Exclude<keyof I["keymap"]["moveLayer"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
                 err?: import("./keymap").MoveLayerErrorCode | undefined;
-            } & { [K_49 in Exclude<keyof I["keymap"]["moveLayer"], keyof import("./keymap").MoveLayerResponse>]: never; }) | undefined;
+            } & { [K_55 in Exclude<keyof I["keymap"]["moveLayer"], keyof import("./keymap").MoveLayerResponse>]: never; }) | undefined;
             addLayer?: ({
                 ok?: {
                     index?: number | undefined;
@@ -4220,6 +5037,11 @@ export declare const RequestResponse: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } | undefined;
                 } | undefined;
@@ -4238,6 +5060,11 @@ export declare const RequestResponse: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } | undefined;
                 } & {
@@ -4254,6 +5081,11 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     } & {
                         id?: number | undefined;
                         name?: string | undefined;
@@ -4269,7 +5101,7 @@ export declare const RequestResponse: {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
-                        } & { [K_50 in Exclude<keyof I["keymap"]["addLayer"]["ok"]["layer"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_51 in Exclude<keyof I["keymap"]["addLayer"]["ok"]["layer"]["bindings"], keyof {
+                        } & { [K_56 in Exclude<keyof I["keymap"]["addLayer"]["ok"]["layer"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_57 in Exclude<keyof I["keymap"]["addLayer"]["ok"]["layer"]["bindings"], keyof {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
@@ -4283,21 +5115,38 @@ export declare const RequestResponse: {
                         } & {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
-                        } & { [K_52 in Exclude<keyof I["keymap"]["addLayer"]["ok"]["layer"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_53 in Exclude<keyof I["keymap"]["addLayer"]["ok"]["layer"]["keyNames"], keyof {
+                        } & { [K_58 in Exclude<keyof I["keymap"]["addLayer"]["ok"]["layer"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_59 in Exclude<keyof I["keymap"]["addLayer"]["ok"]["layer"]["keyNames"], keyof {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[]>]: never; }) | undefined;
-                    } & { [K_54 in Exclude<keyof I["keymap"]["addLayer"]["ok"]["layer"], keyof import("./keymap").Layer>]: never; }) | undefined;
-                } & { [K_55 in Exclude<keyof I["keymap"]["addLayer"]["ok"], keyof import("./keymap").AddLayerResponseDetails>]: never; }) | undefined;
+                        sensorBindings?: ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] & ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & { [K_60 in Exclude<keyof I["keymap"]["addLayer"]["ok"]["layer"]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_61 in Exclude<keyof I["keymap"]["addLayer"]["ok"]["layer"]["sensorBindings"], keyof {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[]>]: never; }) | undefined;
+                    } & { [K_62 in Exclude<keyof I["keymap"]["addLayer"]["ok"]["layer"], keyof import("./keymap").Layer>]: never; }) | undefined;
+                } & { [K_63 in Exclude<keyof I["keymap"]["addLayer"]["ok"], keyof import("./keymap").AddLayerResponseDetails>]: never; }) | undefined;
                 err?: import("./keymap").AddLayerErrorCode | undefined;
-            } & { [K_56 in Exclude<keyof I["keymap"]["addLayer"], keyof import("./keymap").AddLayerResponse>]: never; }) | undefined;
+            } & { [K_64 in Exclude<keyof I["keymap"]["addLayer"], keyof import("./keymap").AddLayerResponse>]: never; }) | undefined;
             removeLayer?: ({
                 ok?: {} | undefined;
                 err?: import("./keymap").RemoveLayerErrorCode | undefined;
             } & {
-                ok?: ({} & {} & { [K_57 in Exclude<keyof I["keymap"]["removeLayer"]["ok"], never>]: never; }) | undefined;
+                ok?: ({} & {} & { [K_65 in Exclude<keyof I["keymap"]["removeLayer"]["ok"], never>]: never; }) | undefined;
                 err?: import("./keymap").RemoveLayerErrorCode | undefined;
-            } & { [K_58 in Exclude<keyof I["keymap"]["removeLayer"], keyof import("./keymap").RemoveLayerResponse>]: never; }) | undefined;
+            } & { [K_66 in Exclude<keyof I["keymap"]["removeLayer"], keyof import("./keymap").RemoveLayerResponse>]: never; }) | undefined;
             restoreLayer?: ({
                 ok?: {
                     id?: number | undefined;
@@ -4310,6 +5159,11 @@ export declare const RequestResponse: {
                     keyNames?: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
+                    }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
                     }[] | undefined;
                 } | undefined;
                 err?: import("./keymap").RestoreLayerErrorCode | undefined;
@@ -4326,6 +5180,11 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 } & {
                     id?: number | undefined;
                     name?: string | undefined;
@@ -4341,7 +5200,7 @@ export declare const RequestResponse: {
                         behaviorId?: number | undefined;
                         param1?: number | undefined;
                         param2?: number | undefined;
-                    } & { [K_59 in Exclude<keyof I["keymap"]["restoreLayer"]["ok"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_60 in Exclude<keyof I["keymap"]["restoreLayer"]["ok"]["bindings"], keyof {
+                    } & { [K_67 in Exclude<keyof I["keymap"]["restoreLayer"]["ok"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_68 in Exclude<keyof I["keymap"]["restoreLayer"]["ok"]["bindings"], keyof {
                         behaviorId?: number | undefined;
                         param1?: number | undefined;
                         param2?: number | undefined;
@@ -4355,17 +5214,35 @@ export declare const RequestResponse: {
                     } & {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
-                    } & { [K_61 in Exclude<keyof I["keymap"]["restoreLayer"]["ok"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_62 in Exclude<keyof I["keymap"]["restoreLayer"]["ok"]["keyNames"], keyof {
+                    } & { [K_69 in Exclude<keyof I["keymap"]["restoreLayer"]["ok"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_70 in Exclude<keyof I["keymap"]["restoreLayer"]["ok"]["keyNames"], keyof {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[]>]: never; }) | undefined;
-                } & { [K_63 in Exclude<keyof I["keymap"]["restoreLayer"]["ok"], keyof import("./keymap").Layer>]: never; }) | undefined;
+                    sensorBindings?: ({
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] & ({
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    } & {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    } & { [K_71 in Exclude<keyof I["keymap"]["restoreLayer"]["ok"]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_72 in Exclude<keyof I["keymap"]["restoreLayer"]["ok"]["sensorBindings"], keyof {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[]>]: never; }) | undefined;
+                } & { [K_73 in Exclude<keyof I["keymap"]["restoreLayer"]["ok"], keyof import("./keymap").Layer>]: never; }) | undefined;
                 err?: import("./keymap").RestoreLayerErrorCode | undefined;
-            } & { [K_64 in Exclude<keyof I["keymap"]["restoreLayer"], keyof import("./keymap").RestoreLayerResponse>]: never; }) | undefined;
+            } & { [K_74 in Exclude<keyof I["keymap"]["restoreLayer"], keyof import("./keymap").RestoreLayerResponse>]: never; }) | undefined;
             setLayerProps?: import("./keymap").SetLayerPropsResponse | undefined;
             setLayerKeyName?: import("./keymap").SetLayerKeyNameResponse | undefined;
-        } & { [K_65 in Exclude<keyof I["keymap"], keyof Response7>]: never; }) | undefined;
-    } & { [K_66 in Exclude<keyof I, keyof RequestResponse>]: never; }>(base?: I | undefined): RequestResponse;
+            setLayerSensorBinding?: import("./keymap").SetLayerSensorBindingResponse | undefined;
+        } & { [K_75 in Exclude<keyof I["keymap"], keyof Response7>]: never; }) | undefined;
+    } & { [K_76 in Exclude<keyof I, keyof RequestResponse>]: never; }>(base?: I | undefined): RequestResponse;
     fromPartial<I_1 extends {
         requestId?: number | undefined;
         meta?: {
@@ -4433,9 +5310,15 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 }[] | undefined;
                 availableLayers?: number | undefined;
                 maxLayerNameLength?: number | undefined;
+                sensorCount?: number | undefined;
             } | undefined;
             setLayerBinding?: import("./keymap").SetLayerBindingResponse | undefined;
             checkUnsavedChanges?: boolean | undefined;
@@ -4473,9 +5356,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
             } | undefined;
@@ -4493,9 +5382,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 err?: import("./keymap").MoveLayerErrorCode | undefined;
             } | undefined;
@@ -4513,6 +5408,11 @@ export declare const RequestResponse: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } | undefined;
                 } | undefined;
@@ -4535,11 +5435,17 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 } | undefined;
                 err?: import("./keymap").RestoreLayerErrorCode | undefined;
             } | undefined;
             setLayerProps?: import("./keymap").SetLayerPropsResponse | undefined;
             setLayerKeyName?: import("./keymap").SetLayerKeyNameResponse | undefined;
+            setLayerSensorBinding?: import("./keymap").SetLayerSensorBindingResponse | undefined;
         } | undefined;
     } & {
         requestId?: number | undefined;
@@ -4549,7 +5455,7 @@ export declare const RequestResponse: {
         } & {
             noResponse?: boolean | undefined;
             simpleError?: import("./meta").ErrorConditions | undefined;
-        } & { [K_67 in Exclude<keyof I_1["meta"], keyof Response4>]: never; }) | undefined;
+        } & { [K_77 in Exclude<keyof I_1["meta"], keyof Response4>]: never; }) | undefined;
         core?: ({
             getDeviceInfo?: {
                 name?: string | undefined;
@@ -4564,10 +5470,10 @@ export declare const RequestResponse: {
             } & {
                 name?: string | undefined;
                 serialNumber?: Uint8Array | undefined;
-            } & { [K_68 in Exclude<keyof I_1["core"]["getDeviceInfo"], keyof import("./core").GetDeviceInfoResponse>]: never; }) | undefined;
+            } & { [K_78 in Exclude<keyof I_1["core"]["getDeviceInfo"], keyof import("./core").GetDeviceInfoResponse>]: never; }) | undefined;
             getLockState?: import("./core").LockState | undefined;
             resetSettings?: boolean | undefined;
-        } & { [K_69 in Exclude<keyof I_1["core"], keyof Response5>]: never; }) | undefined;
+        } & { [K_79 in Exclude<keyof I_1["core"], keyof Response5>]: never; }) | undefined;
         behaviors?: ({
             listAllBehaviors?: {
                 behaviors?: number[] | undefined;
@@ -4610,8 +5516,8 @@ export declare const RequestResponse: {
             listAllBehaviors?: ({
                 behaviors?: number[] | undefined;
             } & {
-                behaviors?: (number[] & number[] & { [K_70 in Exclude<keyof I_1["behaviors"]["listAllBehaviors"]["behaviors"], keyof number[]>]: never; }) | undefined;
-            } & { [K_71 in Exclude<keyof I_1["behaviors"]["listAllBehaviors"], "behaviors">]: never; }) | undefined;
+                behaviors?: (number[] & number[] & { [K_80 in Exclude<keyof I_1["behaviors"]["listAllBehaviors"]["behaviors"], keyof number[]>]: never; }) | undefined;
+            } & { [K_81 in Exclude<keyof I_1["behaviors"]["listAllBehaviors"], "behaviors">]: never; }) | undefined;
             getBehaviorDetails?: ({
                 id?: number | undefined;
                 displayName?: string | undefined;
@@ -4735,7 +5641,7 @@ export declare const RequestResponse: {
                         layerId?: {} | undefined;
                     } & {
                         name?: string | undefined;
-                        nil?: ({} & {} & { [K_72 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["nil"], never>]: never; }) | undefined;
+                        nil?: ({} & {} & { [K_82 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["nil"], never>]: never; }) | undefined;
                         constant?: number | undefined;
                         range?: ({
                             min?: number | undefined;
@@ -4743,16 +5649,16 @@ export declare const RequestResponse: {
                         } & {
                             min?: number | undefined;
                             max?: number | undefined;
-                        } & { [K_73 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["range"], keyof import("./behaviors").BehaviorParameterValueDescriptionRange>]: never; }) | undefined;
+                        } & { [K_83 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["range"], keyof import("./behaviors").BehaviorParameterValueDescriptionRange>]: never; }) | undefined;
                         hidUsage?: ({
                             keyboardMax?: number | undefined;
                             consumerMax?: number | undefined;
                         } & {
                             keyboardMax?: number | undefined;
                             consumerMax?: number | undefined;
-                        } & { [K_74 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["hidUsage"], keyof import("./behaviors").BehaviorParameterHidUsage>]: never; }) | undefined;
-                        layerId?: ({} & {} & { [K_75 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["layerId"], never>]: never; }) | undefined;
-                    } & { [K_76 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number], keyof import("./behaviors").BehaviorParameterValueDescription>]: never; })[] & { [K_77 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"], keyof {
+                        } & { [K_84 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["hidUsage"], keyof import("./behaviors").BehaviorParameterHidUsage>]: never; }) | undefined;
+                        layerId?: ({} & {} & { [K_85 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number]["layerId"], never>]: never; }) | undefined;
+                    } & { [K_86 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"][number], keyof import("./behaviors").BehaviorParameterValueDescription>]: never; })[] & { [K_87 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param1"], keyof {
                         name?: string | undefined;
                         nil?: {} | undefined;
                         constant?: number | undefined;
@@ -4794,7 +5700,7 @@ export declare const RequestResponse: {
                         layerId?: {} | undefined;
                     } & {
                         name?: string | undefined;
-                        nil?: ({} & {} & { [K_78 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["nil"], never>]: never; }) | undefined;
+                        nil?: ({} & {} & { [K_88 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["nil"], never>]: never; }) | undefined;
                         constant?: number | undefined;
                         range?: ({
                             min?: number | undefined;
@@ -4802,16 +5708,16 @@ export declare const RequestResponse: {
                         } & {
                             min?: number | undefined;
                             max?: number | undefined;
-                        } & { [K_79 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["range"], keyof import("./behaviors").BehaviorParameterValueDescriptionRange>]: never; }) | undefined;
+                        } & { [K_89 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["range"], keyof import("./behaviors").BehaviorParameterValueDescriptionRange>]: never; }) | undefined;
                         hidUsage?: ({
                             keyboardMax?: number | undefined;
                             consumerMax?: number | undefined;
                         } & {
                             keyboardMax?: number | undefined;
                             consumerMax?: number | undefined;
-                        } & { [K_80 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["hidUsage"], keyof import("./behaviors").BehaviorParameterHidUsage>]: never; }) | undefined;
-                        layerId?: ({} & {} & { [K_81 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["layerId"], never>]: never; }) | undefined;
-                    } & { [K_82 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number], keyof import("./behaviors").BehaviorParameterValueDescription>]: never; })[] & { [K_83 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"], keyof {
+                        } & { [K_90 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["hidUsage"], keyof import("./behaviors").BehaviorParameterHidUsage>]: never; }) | undefined;
+                        layerId?: ({} & {} & { [K_91 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number]["layerId"], never>]: never; }) | undefined;
+                    } & { [K_92 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"][number], keyof import("./behaviors").BehaviorParameterValueDescription>]: never; })[] & { [K_93 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number]["param2"], keyof {
                         name?: string | undefined;
                         nil?: {} | undefined;
                         constant?: number | undefined;
@@ -4825,7 +5731,7 @@ export declare const RequestResponse: {
                         } | undefined;
                         layerId?: {} | undefined;
                     }[]>]: never; }) | undefined;
-                } & { [K_84 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number], keyof import("./behaviors").BehaviorBindingParametersSet>]: never; })[] & { [K_85 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"], keyof {
+                } & { [K_94 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"][number], keyof import("./behaviors").BehaviorBindingParametersSet>]: never; })[] & { [K_95 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"]["metadata"], keyof {
                     param1?: {
                         name?: string | undefined;
                         nil?: {} | undefined;
@@ -4855,8 +5761,8 @@ export declare const RequestResponse: {
                         layerId?: {} | undefined;
                     }[] | undefined;
                 }[]>]: never; }) | undefined;
-            } & { [K_86 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"], keyof import("./behaviors").GetBehaviorDetailsResponse>]: never; }) | undefined;
-        } & { [K_87 in Exclude<keyof I_1["behaviors"], keyof Response6>]: never; }) | undefined;
+            } & { [K_96 in Exclude<keyof I_1["behaviors"]["getBehaviorDetails"], keyof import("./behaviors").GetBehaviorDetailsResponse>]: never; }) | undefined;
+        } & { [K_97 in Exclude<keyof I_1["behaviors"], keyof Response6>]: never; }) | undefined;
         keymap?: ({
             getKeymap?: {
                 layers?: {
@@ -4871,9 +5777,15 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 }[] | undefined;
                 availableLayers?: number | undefined;
                 maxLayerNameLength?: number | undefined;
+                sensorCount?: number | undefined;
             } | undefined;
             setLayerBinding?: import("./keymap").SetLayerBindingResponse | undefined;
             checkUnsavedChanges?: boolean | undefined;
@@ -4911,9 +5823,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
             } | undefined;
@@ -4931,9 +5849,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 err?: import("./keymap").MoveLayerErrorCode | undefined;
             } | undefined;
@@ -4951,6 +5875,11 @@ export declare const RequestResponse: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } | undefined;
                 } | undefined;
@@ -4973,11 +5902,17 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 } | undefined;
                 err?: import("./keymap").RestoreLayerErrorCode | undefined;
             } | undefined;
             setLayerProps?: import("./keymap").SetLayerPropsResponse | undefined;
             setLayerKeyName?: import("./keymap").SetLayerKeyNameResponse | undefined;
+            setLayerSensorBinding?: import("./keymap").SetLayerSensorBindingResponse | undefined;
         } & {
             getKeymap?: ({
                 layers?: {
@@ -4992,9 +5927,15 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 }[] | undefined;
                 availableLayers?: number | undefined;
                 maxLayerNameLength?: number | undefined;
+                sensorCount?: number | undefined;
             } & {
                 layers?: ({
                     id?: number | undefined;
@@ -5008,6 +5949,11 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 }[] & ({
                     id?: number | undefined;
                     name?: string | undefined;
@@ -5019,6 +5965,11 @@ export declare const RequestResponse: {
                     keyNames?: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
+                    }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
                     }[] | undefined;
                 } & {
                     id?: number | undefined;
@@ -5035,7 +5986,7 @@ export declare const RequestResponse: {
                         behaviorId?: number | undefined;
                         param1?: number | undefined;
                         param2?: number | undefined;
-                    } & { [K_88 in Exclude<keyof I_1["keymap"]["getKeymap"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_89 in Exclude<keyof I_1["keymap"]["getKeymap"]["layers"][number]["bindings"], keyof {
+                    } & { [K_98 in Exclude<keyof I_1["keymap"]["getKeymap"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_99 in Exclude<keyof I_1["keymap"]["getKeymap"]["layers"][number]["bindings"], keyof {
                         behaviorId?: number | undefined;
                         param1?: number | undefined;
                         param2?: number | undefined;
@@ -5049,11 +6000,28 @@ export declare const RequestResponse: {
                     } & {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
-                    } & { [K_90 in Exclude<keyof I_1["keymap"]["getKeymap"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_91 in Exclude<keyof I_1["keymap"]["getKeymap"]["layers"][number]["keyNames"], keyof {
+                    } & { [K_100 in Exclude<keyof I_1["keymap"]["getKeymap"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_101 in Exclude<keyof I_1["keymap"]["getKeymap"]["layers"][number]["keyNames"], keyof {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[]>]: never; }) | undefined;
-                } & { [K_92 in Exclude<keyof I_1["keymap"]["getKeymap"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_93 in Exclude<keyof I_1["keymap"]["getKeymap"]["layers"], keyof {
+                    sensorBindings?: ({
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] & ({
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    } & {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    } & { [K_102 in Exclude<keyof I_1["keymap"]["getKeymap"]["layers"][number]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_103 in Exclude<keyof I_1["keymap"]["getKeymap"]["layers"][number]["sensorBindings"], keyof {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[]>]: never; }) | undefined;
+                } & { [K_104 in Exclude<keyof I_1["keymap"]["getKeymap"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_105 in Exclude<keyof I_1["keymap"]["getKeymap"]["layers"], keyof {
                     id?: number | undefined;
                     name?: string | undefined;
                     bindings?: {
@@ -5065,10 +6033,16 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 }[]>]: never; }) | undefined;
                 availableLayers?: number | undefined;
                 maxLayerNameLength?: number | undefined;
-            } & { [K_94 in Exclude<keyof I_1["keymap"]["getKeymap"], keyof import("./keymap").Keymap>]: never; }) | undefined;
+                sensorCount?: number | undefined;
+            } & { [K_106 in Exclude<keyof I_1["keymap"]["getKeymap"], keyof import("./keymap").Keymap>]: never; }) | undefined;
             setLayerBinding?: import("./keymap").SetLayerBindingResponse | undefined;
             checkUnsavedChanges?: boolean | undefined;
             saveChanges?: ({
@@ -5077,7 +6051,7 @@ export declare const RequestResponse: {
             } & {
                 ok?: boolean | undefined;
                 err?: import("./keymap").SaveChangesErrorCode | undefined;
-            } & { [K_95 in Exclude<keyof I_1["keymap"]["saveChanges"], keyof import("./keymap").SaveChangesResponse>]: never; }) | undefined;
+            } & { [K_107 in Exclude<keyof I_1["keymap"]["saveChanges"], keyof import("./keymap").SaveChangesResponse>]: never; }) | undefined;
             discardChanges?: boolean | undefined;
             getPhysicalLayouts?: ({
                 activeLayoutIndex?: number | undefined;
@@ -5143,7 +6117,7 @@ export declare const RequestResponse: {
                         r?: number | undefined;
                         rx?: number | undefined;
                         ry?: number | undefined;
-                    } & { [K_96 in Exclude<keyof I_1["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"][number], keyof import("./keymap").KeyPhysicalAttrs>]: never; })[] & { [K_97 in Exclude<keyof I_1["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"], keyof {
+                    } & { [K_108 in Exclude<keyof I_1["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"][number], keyof import("./keymap").KeyPhysicalAttrs>]: never; })[] & { [K_109 in Exclude<keyof I_1["keymap"]["getPhysicalLayouts"]["layouts"][number]["keys"], keyof {
                         width?: number | undefined;
                         height?: number | undefined;
                         x?: number | undefined;
@@ -5152,7 +6126,7 @@ export declare const RequestResponse: {
                         rx?: number | undefined;
                         ry?: number | undefined;
                     }[]>]: never; }) | undefined;
-                } & { [K_98 in Exclude<keyof I_1["keymap"]["getPhysicalLayouts"]["layouts"][number], keyof import("./keymap").PhysicalLayout>]: never; })[] & { [K_99 in Exclude<keyof I_1["keymap"]["getPhysicalLayouts"]["layouts"], keyof {
+                } & { [K_110 in Exclude<keyof I_1["keymap"]["getPhysicalLayouts"]["layouts"][number], keyof import("./keymap").PhysicalLayout>]: never; })[] & { [K_111 in Exclude<keyof I_1["keymap"]["getPhysicalLayouts"]["layouts"], keyof {
                     name?: string | undefined;
                     keys?: {
                         width?: number | undefined;
@@ -5164,7 +6138,7 @@ export declare const RequestResponse: {
                         ry?: number | undefined;
                     }[] | undefined;
                 }[]>]: never; }) | undefined;
-            } & { [K_100 in Exclude<keyof I_1["keymap"]["getPhysicalLayouts"], keyof import("./keymap").PhysicalLayouts>]: never; }) | undefined;
+            } & { [K_112 in Exclude<keyof I_1["keymap"]["getPhysicalLayouts"], keyof import("./keymap").PhysicalLayouts>]: never; }) | undefined;
             setActivePhysicalLayout?: ({
                 ok?: {
                     layers?: {
@@ -5179,9 +6153,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
             } & {
@@ -5198,9 +6178,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } & {
                     layers?: ({
                         id?: number | undefined;
@@ -5214,6 +6200,11 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] & ({
                         id?: number | undefined;
                         name?: string | undefined;
@@ -5225,6 +6216,11 @@ export declare const RequestResponse: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } & {
                         id?: number | undefined;
@@ -5241,7 +6237,7 @@ export declare const RequestResponse: {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
-                        } & { [K_101 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_102 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"], keyof {
+                        } & { [K_113 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_114 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["bindings"], keyof {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
@@ -5255,11 +6251,28 @@ export declare const RequestResponse: {
                         } & {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
-                        } & { [K_103 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_104 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"], keyof {
+                        } & { [K_115 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_116 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["keyNames"], keyof {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[]>]: never; }) | undefined;
-                    } & { [K_105 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_106 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"]["layers"], keyof {
+                        sensorBindings?: ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] & ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & { [K_117 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_118 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number]["sensorBindings"], keyof {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[]>]: never; }) | undefined;
+                    } & { [K_119 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_120 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"]["layers"], keyof {
                         id?: number | undefined;
                         name?: string | undefined;
                         bindings?: {
@@ -5271,12 +6284,18 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[]>]: never; }) | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
-                } & { [K_107 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
+                    sensorCount?: number | undefined;
+                } & { [K_121 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
                 err?: import("./keymap").SetActivePhysicalLayoutErrorCode | undefined;
-            } & { [K_108 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"], keyof import("./keymap").SetActivePhysicalLayoutResponse>]: never; }) | undefined;
+            } & { [K_122 in Exclude<keyof I_1["keymap"]["setActivePhysicalLayout"], keyof import("./keymap").SetActivePhysicalLayoutResponse>]: never; }) | undefined;
             moveLayer?: ({
                 ok?: {
                     layers?: {
@@ -5291,9 +6310,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } | undefined;
                 err?: import("./keymap").MoveLayerErrorCode | undefined;
             } & {
@@ -5310,9 +6335,15 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
+                    sensorCount?: number | undefined;
                 } & {
                     layers?: ({
                         id?: number | undefined;
@@ -5326,6 +6357,11 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[] & ({
                         id?: number | undefined;
                         name?: string | undefined;
@@ -5337,6 +6373,11 @@ export declare const RequestResponse: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } & {
                         id?: number | undefined;
@@ -5353,7 +6394,7 @@ export declare const RequestResponse: {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
-                        } & { [K_109 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_110 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"], keyof {
+                        } & { [K_123 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_124 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"]["layers"][number]["bindings"], keyof {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
@@ -5367,11 +6408,28 @@ export declare const RequestResponse: {
                         } & {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
-                        } & { [K_111 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_112 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"], keyof {
+                        } & { [K_125 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_126 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"]["layers"][number]["keyNames"], keyof {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[]>]: never; }) | undefined;
-                    } & { [K_113 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_114 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"]["layers"], keyof {
+                        sensorBindings?: ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] & ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & { [K_127 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"]["layers"][number]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_128 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"]["layers"][number]["sensorBindings"], keyof {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[]>]: never; }) | undefined;
+                    } & { [K_129 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"]["layers"][number], keyof import("./keymap").Layer>]: never; })[] & { [K_130 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"]["layers"], keyof {
                         id?: number | undefined;
                         name?: string | undefined;
                         bindings?: {
@@ -5383,12 +6441,18 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     }[]>]: never; }) | undefined;
                     availableLayers?: number | undefined;
                     maxLayerNameLength?: number | undefined;
-                } & { [K_115 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
+                    sensorCount?: number | undefined;
+                } & { [K_131 in Exclude<keyof I_1["keymap"]["moveLayer"]["ok"], keyof import("./keymap").Keymap>]: never; }) | undefined;
                 err?: import("./keymap").MoveLayerErrorCode | undefined;
-            } & { [K_116 in Exclude<keyof I_1["keymap"]["moveLayer"], keyof import("./keymap").MoveLayerResponse>]: never; }) | undefined;
+            } & { [K_132 in Exclude<keyof I_1["keymap"]["moveLayer"], keyof import("./keymap").MoveLayerResponse>]: never; }) | undefined;
             addLayer?: ({
                 ok?: {
                     index?: number | undefined;
@@ -5403,6 +6467,11 @@ export declare const RequestResponse: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } | undefined;
                 } | undefined;
@@ -5421,6 +6490,11 @@ export declare const RequestResponse: {
                         keyNames?: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
+                        }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
                         }[] | undefined;
                     } | undefined;
                 } & {
@@ -5437,6 +6511,11 @@ export declare const RequestResponse: {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[] | undefined;
+                        sensorBindings?: {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] | undefined;
                     } & {
                         id?: number | undefined;
                         name?: string | undefined;
@@ -5452,7 +6531,7 @@ export declare const RequestResponse: {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
-                        } & { [K_117 in Exclude<keyof I_1["keymap"]["addLayer"]["ok"]["layer"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_118 in Exclude<keyof I_1["keymap"]["addLayer"]["ok"]["layer"]["bindings"], keyof {
+                        } & { [K_133 in Exclude<keyof I_1["keymap"]["addLayer"]["ok"]["layer"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_134 in Exclude<keyof I_1["keymap"]["addLayer"]["ok"]["layer"]["bindings"], keyof {
                             behaviorId?: number | undefined;
                             param1?: number | undefined;
                             param2?: number | undefined;
@@ -5466,21 +6545,38 @@ export declare const RequestResponse: {
                         } & {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
-                        } & { [K_119 in Exclude<keyof I_1["keymap"]["addLayer"]["ok"]["layer"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_120 in Exclude<keyof I_1["keymap"]["addLayer"]["ok"]["layer"]["keyNames"], keyof {
+                        } & { [K_135 in Exclude<keyof I_1["keymap"]["addLayer"]["ok"]["layer"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_136 in Exclude<keyof I_1["keymap"]["addLayer"]["ok"]["layer"]["keyNames"], keyof {
                             keyPosition?: number | undefined;
                             name?: string | undefined;
                         }[]>]: never; }) | undefined;
-                    } & { [K_121 in Exclude<keyof I_1["keymap"]["addLayer"]["ok"]["layer"], keyof import("./keymap").Layer>]: never; }) | undefined;
-                } & { [K_122 in Exclude<keyof I_1["keymap"]["addLayer"]["ok"], keyof import("./keymap").AddLayerResponseDetails>]: never; }) | undefined;
+                        sensorBindings?: ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[] & ({
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        } & { [K_137 in Exclude<keyof I_1["keymap"]["addLayer"]["ok"]["layer"]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_138 in Exclude<keyof I_1["keymap"]["addLayer"]["ok"]["layer"]["sensorBindings"], keyof {
+                            behaviorId?: number | undefined;
+                            param1?: number | undefined;
+                            param2?: number | undefined;
+                        }[]>]: never; }) | undefined;
+                    } & { [K_139 in Exclude<keyof I_1["keymap"]["addLayer"]["ok"]["layer"], keyof import("./keymap").Layer>]: never; }) | undefined;
+                } & { [K_140 in Exclude<keyof I_1["keymap"]["addLayer"]["ok"], keyof import("./keymap").AddLayerResponseDetails>]: never; }) | undefined;
                 err?: import("./keymap").AddLayerErrorCode | undefined;
-            } & { [K_123 in Exclude<keyof I_1["keymap"]["addLayer"], keyof import("./keymap").AddLayerResponse>]: never; }) | undefined;
+            } & { [K_141 in Exclude<keyof I_1["keymap"]["addLayer"], keyof import("./keymap").AddLayerResponse>]: never; }) | undefined;
             removeLayer?: ({
                 ok?: {} | undefined;
                 err?: import("./keymap").RemoveLayerErrorCode | undefined;
             } & {
-                ok?: ({} & {} & { [K_124 in Exclude<keyof I_1["keymap"]["removeLayer"]["ok"], never>]: never; }) | undefined;
+                ok?: ({} & {} & { [K_142 in Exclude<keyof I_1["keymap"]["removeLayer"]["ok"], never>]: never; }) | undefined;
                 err?: import("./keymap").RemoveLayerErrorCode | undefined;
-            } & { [K_125 in Exclude<keyof I_1["keymap"]["removeLayer"], keyof import("./keymap").RemoveLayerResponse>]: never; }) | undefined;
+            } & { [K_143 in Exclude<keyof I_1["keymap"]["removeLayer"], keyof import("./keymap").RemoveLayerResponse>]: never; }) | undefined;
             restoreLayer?: ({
                 ok?: {
                     id?: number | undefined;
@@ -5493,6 +6589,11 @@ export declare const RequestResponse: {
                     keyNames?: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
+                    }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
                     }[] | undefined;
                 } | undefined;
                 err?: import("./keymap").RestoreLayerErrorCode | undefined;
@@ -5509,6 +6610,11 @@ export declare const RequestResponse: {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[] | undefined;
+                    sensorBindings?: {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] | undefined;
                 } & {
                     id?: number | undefined;
                     name?: string | undefined;
@@ -5524,7 +6630,7 @@ export declare const RequestResponse: {
                         behaviorId?: number | undefined;
                         param1?: number | undefined;
                         param2?: number | undefined;
-                    } & { [K_126 in Exclude<keyof I_1["keymap"]["restoreLayer"]["ok"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_127 in Exclude<keyof I_1["keymap"]["restoreLayer"]["ok"]["bindings"], keyof {
+                    } & { [K_144 in Exclude<keyof I_1["keymap"]["restoreLayer"]["ok"]["bindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_145 in Exclude<keyof I_1["keymap"]["restoreLayer"]["ok"]["bindings"], keyof {
                         behaviorId?: number | undefined;
                         param1?: number | undefined;
                         param2?: number | undefined;
@@ -5538,17 +6644,35 @@ export declare const RequestResponse: {
                     } & {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
-                    } & { [K_128 in Exclude<keyof I_1["keymap"]["restoreLayer"]["ok"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_129 in Exclude<keyof I_1["keymap"]["restoreLayer"]["ok"]["keyNames"], keyof {
+                    } & { [K_146 in Exclude<keyof I_1["keymap"]["restoreLayer"]["ok"]["keyNames"][number], keyof import("./keymap").KeyPositionName>]: never; })[] & { [K_147 in Exclude<keyof I_1["keymap"]["restoreLayer"]["ok"]["keyNames"], keyof {
                         keyPosition?: number | undefined;
                         name?: string | undefined;
                     }[]>]: never; }) | undefined;
-                } & { [K_130 in Exclude<keyof I_1["keymap"]["restoreLayer"]["ok"], keyof import("./keymap").Layer>]: never; }) | undefined;
+                    sensorBindings?: ({
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[] & ({
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    } & {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    } & { [K_148 in Exclude<keyof I_1["keymap"]["restoreLayer"]["ok"]["sensorBindings"][number], keyof import("./keymap").BehaviorBinding>]: never; })[] & { [K_149 in Exclude<keyof I_1["keymap"]["restoreLayer"]["ok"]["sensorBindings"], keyof {
+                        behaviorId?: number | undefined;
+                        param1?: number | undefined;
+                        param2?: number | undefined;
+                    }[]>]: never; }) | undefined;
+                } & { [K_150 in Exclude<keyof I_1["keymap"]["restoreLayer"]["ok"], keyof import("./keymap").Layer>]: never; }) | undefined;
                 err?: import("./keymap").RestoreLayerErrorCode | undefined;
-            } & { [K_131 in Exclude<keyof I_1["keymap"]["restoreLayer"], keyof import("./keymap").RestoreLayerResponse>]: never; }) | undefined;
+            } & { [K_151 in Exclude<keyof I_1["keymap"]["restoreLayer"], keyof import("./keymap").RestoreLayerResponse>]: never; }) | undefined;
             setLayerProps?: import("./keymap").SetLayerPropsResponse | undefined;
             setLayerKeyName?: import("./keymap").SetLayerKeyNameResponse | undefined;
-        } & { [K_132 in Exclude<keyof I_1["keymap"], keyof Response7>]: never; }) | undefined;
-    } & { [K_133 in Exclude<keyof I_1, keyof RequestResponse>]: never; }>(object: I_1): RequestResponse;
+            setLayerSensorBinding?: import("./keymap").SetLayerSensorBindingResponse | undefined;
+        } & { [K_152 in Exclude<keyof I_1["keymap"], keyof Response7>]: never; }) | undefined;
+    } & { [K_153 in Exclude<keyof I_1, keyof RequestResponse>]: never; }>(object: I_1): RequestResponse;
 };
 export declare const Notification: {
     encode(message: Notification, writer?: _m0.Writer): _m0.Writer;
