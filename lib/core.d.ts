@@ -12,6 +12,7 @@ export interface Request {
     getLockState?: boolean | undefined;
     lock?: boolean | undefined;
     resetSettings?: boolean | undefined;
+    rebootToBootloader?: boolean | undefined;
 }
 export interface Response {
     getDeviceInfo?: GetDeviceInfoResponse | undefined;
@@ -21,6 +22,7 @@ export interface Response {
 export interface GetDeviceInfoResponse {
     name: string;
     serialNumber: Uint8Array;
+    version: string;
 }
 export interface Notification {
     lockStateChanged?: LockState | undefined;
@@ -35,22 +37,26 @@ export declare const Request: {
         getLockState?: boolean | undefined;
         lock?: boolean | undefined;
         resetSettings?: boolean | undefined;
+        rebootToBootloader?: boolean | undefined;
     } & {
         getDeviceInfo?: boolean | undefined;
         getLockState?: boolean | undefined;
         lock?: boolean | undefined;
         resetSettings?: boolean | undefined;
+        rebootToBootloader?: boolean | undefined;
     } & { [K in Exclude<keyof I, keyof Request>]: never; }>(base?: I | undefined): Request;
     fromPartial<I_1 extends {
         getDeviceInfo?: boolean | undefined;
         getLockState?: boolean | undefined;
         lock?: boolean | undefined;
         resetSettings?: boolean | undefined;
+        rebootToBootloader?: boolean | undefined;
     } & {
         getDeviceInfo?: boolean | undefined;
         getLockState?: boolean | undefined;
         lock?: boolean | undefined;
         resetSettings?: boolean | undefined;
+        rebootToBootloader?: boolean | undefined;
     } & { [K_1 in Exclude<keyof I_1, keyof Request>]: never; }>(object: I_1): Request;
 };
 export declare const Response: {
@@ -62,6 +68,7 @@ export declare const Response: {
         getDeviceInfo?: {
             name?: string | undefined;
             serialNumber?: Uint8Array | undefined;
+            version?: string | undefined;
         } | undefined;
         getLockState?: LockState | undefined;
         resetSettings?: boolean | undefined;
@@ -69,9 +76,11 @@ export declare const Response: {
         getDeviceInfo?: ({
             name?: string | undefined;
             serialNumber?: Uint8Array | undefined;
+            version?: string | undefined;
         } & {
             name?: string | undefined;
             serialNumber?: Uint8Array | undefined;
+            version?: string | undefined;
         } & { [K in Exclude<keyof I["getDeviceInfo"], keyof GetDeviceInfoResponse>]: never; }) | undefined;
         getLockState?: LockState | undefined;
         resetSettings?: boolean | undefined;
@@ -80,6 +89,7 @@ export declare const Response: {
         getDeviceInfo?: {
             name?: string | undefined;
             serialNumber?: Uint8Array | undefined;
+            version?: string | undefined;
         } | undefined;
         getLockState?: LockState | undefined;
         resetSettings?: boolean | undefined;
@@ -87,9 +97,11 @@ export declare const Response: {
         getDeviceInfo?: ({
             name?: string | undefined;
             serialNumber?: Uint8Array | undefined;
+            version?: string | undefined;
         } & {
             name?: string | undefined;
             serialNumber?: Uint8Array | undefined;
+            version?: string | undefined;
         } & { [K_2 in Exclude<keyof I_1["getDeviceInfo"], keyof GetDeviceInfoResponse>]: never; }) | undefined;
         getLockState?: LockState | undefined;
         resetSettings?: boolean | undefined;
@@ -103,16 +115,20 @@ export declare const GetDeviceInfoResponse: {
     create<I extends {
         name?: string | undefined;
         serialNumber?: Uint8Array | undefined;
+        version?: string | undefined;
     } & {
         name?: string | undefined;
         serialNumber?: Uint8Array | undefined;
+        version?: string | undefined;
     } & { [K in Exclude<keyof I, keyof GetDeviceInfoResponse>]: never; }>(base?: I | undefined): GetDeviceInfoResponse;
     fromPartial<I_1 extends {
         name?: string | undefined;
         serialNumber?: Uint8Array | undefined;
+        version?: string | undefined;
     } & {
         name?: string | undefined;
         serialNumber?: Uint8Array | undefined;
+        version?: string | undefined;
     } & { [K_1 in Exclude<keyof I_1, keyof GetDeviceInfoResponse>]: never; }>(object: I_1): GetDeviceInfoResponse;
 };
 export declare const Notification: {

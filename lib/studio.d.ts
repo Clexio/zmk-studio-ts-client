@@ -38,6 +38,7 @@ export declare const Request: {
             getLockState?: boolean | undefined;
             lock?: boolean | undefined;
             resetSettings?: boolean | undefined;
+            rebootToBootloader?: boolean | undefined;
         } | undefined;
         behaviors?: {
             listAllBehaviors?: boolean | undefined;
@@ -99,11 +100,13 @@ export declare const Request: {
             getLockState?: boolean | undefined;
             lock?: boolean | undefined;
             resetSettings?: boolean | undefined;
+            rebootToBootloader?: boolean | undefined;
         } & {
             getDeviceInfo?: boolean | undefined;
             getLockState?: boolean | undefined;
             lock?: boolean | undefined;
             resetSettings?: boolean | undefined;
+            rebootToBootloader?: boolean | undefined;
         } & { [K in Exclude<keyof I["core"], keyof Request1>]: never; }) | undefined;
         behaviors?: ({
             listAllBehaviors?: boolean | undefined;
@@ -258,6 +261,7 @@ export declare const Request: {
             getLockState?: boolean | undefined;
             lock?: boolean | undefined;
             resetSettings?: boolean | undefined;
+            rebootToBootloader?: boolean | undefined;
         } | undefined;
         behaviors?: {
             listAllBehaviors?: boolean | undefined;
@@ -319,11 +323,13 @@ export declare const Request: {
             getLockState?: boolean | undefined;
             lock?: boolean | undefined;
             resetSettings?: boolean | undefined;
+            rebootToBootloader?: boolean | undefined;
         } & {
             getDeviceInfo?: boolean | undefined;
             getLockState?: boolean | undefined;
             lock?: boolean | undefined;
             resetSettings?: boolean | undefined;
+            rebootToBootloader?: boolean | undefined;
         } & { [K_15 in Exclude<keyof I_1["core"], keyof Request1>]: never; }) | undefined;
         behaviors?: ({
             listAllBehaviors?: boolean | undefined;
@@ -488,6 +494,7 @@ export declare const Response: {
                 getDeviceInfo?: {
                     name?: string | undefined;
                     serialNumber?: Uint8Array | undefined;
+                    version?: string | undefined;
                 } | undefined;
                 getLockState?: import("./core").LockState | undefined;
                 resetSettings?: boolean | undefined;
@@ -705,6 +712,7 @@ export declare const Response: {
                 getDeviceInfo?: {
                     name?: string | undefined;
                     serialNumber?: Uint8Array | undefined;
+                    version?: string | undefined;
                 } | undefined;
                 getLockState?: import("./core").LockState | undefined;
                 resetSettings?: boolean | undefined;
@@ -915,6 +923,7 @@ export declare const Response: {
                 getDeviceInfo?: {
                     name?: string | undefined;
                     serialNumber?: Uint8Array | undefined;
+                    version?: string | undefined;
                 } | undefined;
                 getLockState?: import("./core").LockState | undefined;
                 resetSettings?: boolean | undefined;
@@ -922,9 +931,11 @@ export declare const Response: {
                 getDeviceInfo?: ({
                     name?: string | undefined;
                     serialNumber?: Uint8Array | undefined;
+                    version?: string | undefined;
                 } & {
                     name?: string | undefined;
                     serialNumber?: Uint8Array | undefined;
+                    version?: string | undefined;
                 } & { [K_1 in Exclude<keyof I["requestResponse"]["core"]["getDeviceInfo"], keyof import("./core").GetDeviceInfoResponse>]: never; }) | undefined;
                 getLockState?: import("./core").LockState | undefined;
                 resetSettings?: boolean | undefined;
@@ -2170,6 +2181,7 @@ export declare const Response: {
                 getDeviceInfo?: {
                     name?: string | undefined;
                     serialNumber?: Uint8Array | undefined;
+                    version?: string | undefined;
                 } | undefined;
                 getLockState?: import("./core").LockState | undefined;
                 resetSettings?: boolean | undefined;
@@ -2387,6 +2399,7 @@ export declare const Response: {
                 getDeviceInfo?: {
                     name?: string | undefined;
                     serialNumber?: Uint8Array | undefined;
+                    version?: string | undefined;
                 } | undefined;
                 getLockState?: import("./core").LockState | undefined;
                 resetSettings?: boolean | undefined;
@@ -2597,6 +2610,7 @@ export declare const Response: {
                 getDeviceInfo?: {
                     name?: string | undefined;
                     serialNumber?: Uint8Array | undefined;
+                    version?: string | undefined;
                 } | undefined;
                 getLockState?: import("./core").LockState | undefined;
                 resetSettings?: boolean | undefined;
@@ -2604,9 +2618,11 @@ export declare const Response: {
                 getDeviceInfo?: ({
                     name?: string | undefined;
                     serialNumber?: Uint8Array | undefined;
+                    version?: string | undefined;
                 } & {
                     name?: string | undefined;
                     serialNumber?: Uint8Array | undefined;
+                    version?: string | undefined;
                 } & { [K_85 in Exclude<keyof I_1["requestResponse"]["core"]["getDeviceInfo"], keyof import("./core").GetDeviceInfoResponse>]: never; }) | undefined;
                 getLockState?: import("./core").LockState | undefined;
                 resetSettings?: boolean | undefined;
@@ -3857,6 +3873,7 @@ export declare const RequestResponse: {
             getDeviceInfo?: {
                 name?: string | undefined;
                 serialNumber?: Uint8Array | undefined;
+                version?: string | undefined;
             } | undefined;
             getLockState?: import("./core").LockState | undefined;
             resetSettings?: boolean | undefined;
@@ -4067,6 +4084,7 @@ export declare const RequestResponse: {
             getDeviceInfo?: {
                 name?: string | undefined;
                 serialNumber?: Uint8Array | undefined;
+                version?: string | undefined;
             } | undefined;
             getLockState?: import("./core").LockState | undefined;
             resetSettings?: boolean | undefined;
@@ -4074,9 +4092,11 @@ export declare const RequestResponse: {
             getDeviceInfo?: ({
                 name?: string | undefined;
                 serialNumber?: Uint8Array | undefined;
+                version?: string | undefined;
             } & {
                 name?: string | undefined;
                 serialNumber?: Uint8Array | undefined;
+                version?: string | undefined;
             } & { [K_1 in Exclude<keyof I["core"]["getDeviceInfo"], keyof import("./core").GetDeviceInfoResponse>]: never; }) | undefined;
             getLockState?: import("./core").LockState | undefined;
             resetSettings?: boolean | undefined;
@@ -5301,6 +5321,7 @@ export declare const RequestResponse: {
             getDeviceInfo?: {
                 name?: string | undefined;
                 serialNumber?: Uint8Array | undefined;
+                version?: string | undefined;
             } | undefined;
             getLockState?: import("./core").LockState | undefined;
             resetSettings?: boolean | undefined;
@@ -5511,6 +5532,7 @@ export declare const RequestResponse: {
             getDeviceInfo?: {
                 name?: string | undefined;
                 serialNumber?: Uint8Array | undefined;
+                version?: string | undefined;
             } | undefined;
             getLockState?: import("./core").LockState | undefined;
             resetSettings?: boolean | undefined;
@@ -5518,9 +5540,11 @@ export declare const RequestResponse: {
             getDeviceInfo?: ({
                 name?: string | undefined;
                 serialNumber?: Uint8Array | undefined;
+                version?: string | undefined;
             } & {
                 name?: string | undefined;
                 serialNumber?: Uint8Array | undefined;
+                version?: string | undefined;
             } & { [K_81 in Exclude<keyof I_1["core"]["getDeviceInfo"], keyof import("./core").GetDeviceInfoResponse>]: never; }) | undefined;
             getLockState?: import("./core").LockState | undefined;
             resetSettings?: boolean | undefined;
