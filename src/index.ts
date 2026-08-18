@@ -72,6 +72,7 @@ async function pump_responses(
       }
     }
   } catch (e) {
+    console.error("RPC response pump failed", e);
     reject_all_pending(pending, e);
   } finally {
     reader.releaseLock();
@@ -101,7 +102,13 @@ export function create_rpc_connection(transport: RpcTransport, opts?: CreateRpcC
     .pipeThrough(
       new TransformStream({
         transform(chunk, controller) {
-          controller.enqueue(Response.decode(chunk));
+          try {
+            controller.enqueue(Response.decode(chunk));
+          } catch (e) {
+            // 单帧解码失败不能杀死整条响应管道，否则后续所有 RPC
+            // 都会永远挂起（表现就是“连接正常但层数据/行为全空”）。
+            console.error("Failed to decode RPC response frame, skipping", e);
+          }
         },
       }),
       { signal: opts?.signal }
