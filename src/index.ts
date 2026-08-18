@@ -3,7 +3,6 @@ import { Request, Response, RequestResponse, Notification } from './studio';
 import { get_encoder, get_decoder } from './framing';
 import { RpcTransport } from './transport';
 
-import { Mutex } from 'async-mutex';
 import { ErrorConditions } from './meta';
 export { Request, RequestResponse, Response, Notification };
 
@@ -154,8 +153,6 @@ export function create_rpc_connection(transport: RpcTransport, opts?: CreateRpcC
   return connection;
 }
 
-const rpcMutex = new Mutex();
-
 export class NoResponseError extends Error {
   constructor() {
     super("No RPC response received");
@@ -174,8 +171,8 @@ export class MetaError extends Error {
 }
 
 export class RpcTimeoutError extends Error {
-  constructor() {
-    super("RPC timeout");
+  constructor(message = "RPC timeout") {
+    super(message);
     Object.setPrototypeOf(this, RpcTimeoutError.prototype);
   }
 }
@@ -200,19 +197,31 @@ export async function call_rpc(
     // 先登记等待项再发送，避免“响应先到、等待表还没建好”的竞态
     pending.set(request.requestId, { resolve, reject, timer });
 
-    rpcMutex
-      .runExclusive(async () => {
-        const writer = conn.request_writable.getWriter();
+    // WritableStream 本身保证写入串行化，不再需要全局 rpcMutex；
+    // 写入也加超时，避免写挂起时把后续所有请求堵住。
+    (async () => {
+      const writer = conn.request_writable.getWriter();
+      try {
+        await Promise.race([
+          writer.write(request),
+          new Promise<never>((_resolve, rejectWrite) =>
+            setTimeout(
+              () => rejectWrite(new RpcTimeoutError("write timeout")),
+              RPC_TIMEOUT_MS
+            )
+          ),
+        ]);
+        writer.releaseLock();
+      } catch (e) {
         try {
-          await writer.write(request);
-        } finally {
           writer.releaseLock();
+        } catch {
+          // 写入可能仍挂起，释放失败说明连接已不可用，交给断线/重连处理
         }
-      })
-      .catch((e) => {
         clearTimeout(timer);
         pending.delete(request.requestId);
         reject(e);
-      });
+      }
+    })();
   });
 }
