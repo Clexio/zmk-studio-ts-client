@@ -30,6 +30,21 @@ const RPC_TIMEOUT_MS = 5000;
 // 超时后迟到的响应直接丢弃，不再因为一次丢包把整条 RPC 链路卡死。
 const pendingByConnection = new WeakMap<RpcConnection, Map<number, PendingRequest>>();
 
+// 每个连接一个写入队列：只串行化 getWriter()/write()/releaseLock()。
+// WritableStream 不允许并发 getWriter()，而响应匹配按 requestId 独立进行，
+// 所以只需串行化“写入阶段”，不需要（也不能）用一把全局大锁卡住整个请求。
+const writeChains = new WeakMap<RpcConnection, Promise<unknown>>();
+
+function enqueue_write(
+  conn: RpcConnection,
+  task: () => Promise<void>
+): Promise<void> {
+  const prev = writeChains.get(conn) ?? Promise.resolve();
+  const next = prev.then(task, task);
+  writeChains.set(conn, next.catch(() => {}));
+  return next as Promise<void>;
+}
+
 function reject_all_pending(
   pending: Map<number, PendingRequest>,
   reason: any
@@ -197,11 +212,11 @@ export async function call_rpc(
     // 先登记等待项再发送，避免“响应先到、等待表还没建好”的竞态
     pending.set(request.requestId, { resolve, reject, timer });
 
-    // WritableStream 本身保证写入串行化，不再需要全局 rpcMutex；
-    // 写入也加超时，避免写挂起时把后续所有请求堵住。
-    (async () => {
-      const writer = conn.request_writable.getWriter();
+    // 写入阶段串行化 + 超时；响应仍由 pump_responses 按 requestId 投递。
+    enqueue_write(conn, async () => {
+      let writer: WritableStreamDefaultWriter<Request> | undefined;
       try {
+        writer = conn.request_writable.getWriter();
         await Promise.race([
           writer.write(request),
           new Promise<never>((_resolve, rejectWrite) =>
@@ -214,7 +229,7 @@ export async function call_rpc(
         writer.releaseLock();
       } catch (e) {
         try {
-          writer.releaseLock();
+          writer?.releaseLock();
         } catch {
           // 写入可能仍挂起，释放失败说明连接已不可用，交给断线/重连处理
         }
@@ -222,6 +237,6 @@ export async function call_rpc(
         pending.delete(request.requestId);
         reject(e);
       }
-    })();
+    });
   });
 }
