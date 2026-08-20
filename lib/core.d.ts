@@ -13,11 +13,13 @@ export interface Request {
     lock?: boolean | undefined;
     resetSettings?: boolean | undefined;
     rebootToBootloader?: boolean | undefined;
+    clearAllBonds?: boolean | undefined;
 }
 export interface Response {
     getDeviceInfo?: GetDeviceInfoResponse | undefined;
     getLockState?: LockState | undefined;
     resetSettings?: boolean | undefined;
+    clearAllBonds?: boolean | undefined;
 }
 export interface GetDeviceInfoResponse {
     name: string;
